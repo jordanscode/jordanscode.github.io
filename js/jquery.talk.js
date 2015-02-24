@@ -1,9 +1,5 @@
 var questions = [
-						["Hi.", "I'm the computer.", "What's your name?"],
-						["Awesome name.", "What city are you in right now?"],
-						["Yes?"],
-						["What temperature do you think it is outside?"],
-						["It was nice meeting you."]
+						["Hi.", "I'm working on something really cool.", "I promise it will be done soon.", "Just have some patience.", "And before you know it...", "It'll be Christmas morning."]
 					]
 var currentQuestion = 0,
 	lastQuestion = questions.length - 1;
