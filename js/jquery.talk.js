@@ -15,7 +15,7 @@
 var questions = [
 					[
 						["Hi.", "I'm Jordan", "What's your name?"],
-						["", "It's a good name.", "I once named my hamster", "I read that on Wikipedia.", "Promise"],
+						["", "That's a good name.", "Names are a funny thing", "It's one of the only deicions you don't make yourself"],
 						["jordan staniscia", "Welcome home, Jordan", "You have been enabled with Admin controls", "...", "Just kidding."],
 						["jordan", "A solid name, I must say", "Computers can't lie y'know..."],
 						["sarah li", "Hey Bae", "Want to go on another trip somewhere?", "The last few trips we've taken were so much fun!"],
@@ -34,7 +34,7 @@ var questions = [
 						["kevin", "I know a guy named Kevin", "He's one of the friendliest guys I know", "I once saw him eat a plate of nachos in two bites"],
 						["zethus", "Hello fellow Jew!", "Still playing The Sims?", "also", "When you're done can we get boba?"],
 						["david lee", "java extrordinaire", "heir to the Costco throne", "Wearer of Adidas", "Welcome"],
-						["david", "That's my roommate's name", "But there are lots of Davids in the world"],
+						["david", "That's my roommate's name", "And David Bowie is pretty dope..."],
 						["max mullen", "Hey, Max!", "SHIP IT"],
 						["max malin", "What's up, Max?", "Want to go back to Berkeley soon?"],
 						["max", "I know a few people named Max", "Are you tall?", "Do you have brownish/reddish hair?", "If so, we haven't narrowed it down at all"],
@@ -93,6 +93,7 @@ var questions = [
 						["praveen", "Let's do animations, Praveen!", "You know you want to!"],
 						["simon", "Simon says touch your hand to your nose", "Simon says you probably hate this joke if you're name is really Simon", "Simon says I'm still running with it"],
 						["george", "George was my grandfather's name"],
+						["jerry", "You're not Jerry Seinfeld are you?", "Wanna get in a car and get some coffee?"],
 						["jim", "Jim was my grandfather's name"],
 						["shari", "Hey, Shari!", "WHEN ARE YOU VISITING SF!?"],
 						["janiel", "I have a great friend named Janiel", "She sends me postcards from all over the world!", "Must be neat to travel so much"],
@@ -120,10 +121,21 @@ var questions = [
 						["How do you know Jordan?"],
 						["", "That's... quite specific"],
 						["work", "Oh you're a coworker?", "Awesome"],
+						["instacart", "Instacart, eh?", "Now take a Fernet shot", "I'm serious...", "You took one, right?", "TURNING WEBCAM ON TO VERIFY", "...", "Just Kidding..."],
 						["high*school", "Class of 2010", "Back in Florida", "Good times!"],
 						["school", "Those must've been the days!"]
 					],[
-						["What temperature do you think it is outside?"]
+						["What do you do for a living?"],
+						["", "That's quite the job!"],
+						["design|designer", "Jordan is a designer too!", "He works at Instacart on the consumer apps"],
+						["dentist", "I have an honest quesiton", "Would it be cheaper keep my real teeth or to yank all my teeth out right now...", "and then replace them all with fake teeth?", "On second thought...", "I don't want to know"],
+						["engineer|programmer|eng", "Jordan works with programmers a lot", "He actually went to school for CompSci"],
+						["doctor", "What's up, doc?", "You're not laughing..."],
+						["sales|business|bd", "ABC", "Always", "Be", "Closing"],
+						["gardener", "I envy people who make the world a little greener",],
+						["teacher", "That's an important job!", "Gotta teach the next generation, y'know?"],
+						["fireman|firefighter", "Sounds like a job that someone can never FIRE you from!", "Get it?", "..."]
+
 					],[
 						["It was nice meeting you."]
 					]
@@ -190,9 +202,17 @@ function createAnswerField () {
 
 	$('#answer').keyup(function(event){
 	    if(event.keyCode == 13){
-	    	var answer = $('#answer').val();
-	    	$('#answer').remove();
-	        createAnswerMessage(answer);
+	    	var answer = $.trim($('#answer').val());
+	    	if (answer != ""){
+	    		$('#answer').remove();
+	        	createAnswerMessage(answer);
+	        } else {
+	        	$('#answer').removeClass('shake').removeClass('fadeInUp');
+	        	$('#answer').addClass('shake');
+	        	$('#answer').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	        		$(this).removeClass('shake').removeClass('fadeInUp')
+	        	});
+	        }
 	    }
 	});
 
