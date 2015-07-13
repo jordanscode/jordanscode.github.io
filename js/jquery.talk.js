@@ -120,7 +120,7 @@ var questions = [
 	],[
 		["How do you know me?"],
 		["", "That's... quite specific"],
-		["dont|don't", "Oh that is a shame.", "<a href=\"mailto:jordangetsthisemail@gmail.com\">Send me a note</a> or something if you want to"]
+		["dont|don't", "Oh that is a shame.", "<a href=\"mailto:jordangetsthisemail@gmail.com\">Send me a note</a> or something if you want to"],
 		["work", "Oh you're a coworker?", "Awesome"],
 		["instacart", "Instacart, eh?", "Now take a Fernet shot", "I'm serious...", "You took one, right?", "TURNING WEBCAM ON TO VERIFY", "...", "Just Kidding..."],
 		["high*school", "Class of 2010", "Back in Florida", "Good times!"],
