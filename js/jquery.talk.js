@@ -254,7 +254,7 @@ function createAnswerMessage (answer) {
 
 function findResponseForAnswer (answer, responses) {
 	for (k = 2; k < questions[currentQuestion].length; k++) {
-		//console.log(k + " - " + responses[k][0] + " == " + answer);
+		// console.log(k + " - " + responses[k][0] + " == " + answer);
 		if ( answer.toLowerCase().match(responses[k][0]) ) {
 			return responses[k];
 		}
