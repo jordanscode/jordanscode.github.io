@@ -120,6 +120,7 @@ var questions = [
 	],[
 		["How do you know me?"],
 		["", "That's... quite specific"],
+		["dont|don't", "Oh that is a shame.", "<a href=\"mailto:jordangetsthisemail@gmail.com\">Send me a note</a> or something if you want to"]
 		["work", "Oh you're a coworker?", "Awesome"],
 		["instacart", "Instacart, eh?", "Now take a Fernet shot", "I'm serious...", "You took one, right?", "TURNING WEBCAM ON TO VERIFY", "...", "Just Kidding..."],
 		["high*school", "Class of 2010", "Back in Florida", "Good times!"],
@@ -230,7 +231,12 @@ function createAnswerField () {
 	    }
 	});
 
-	$('#answer').focus();
+	$('#answer').on('touchstart', function () {
+        $(this).focus();   // inside this function the focus works
+        focused = $(this); // just for the example when I click next on fiddle
+    });
+
+	$('#answer').trigger('touchstart').focus();
 
 	smoothScrollBottom();
 }
@@ -286,7 +292,6 @@ function openCloseMenu () {
 				// Fade Out
 				$overlay.removeClass('fadeIn').addClass('fadeOut');
 				$mainContent.removeClass('blur');
-				$('body').removeClass('no-scroll');
 
 				$overlay.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						// And when it's done animating, hide it
@@ -298,7 +303,6 @@ function openCloseMenu () {
 				animationOver = false;
 				$overlay.show().addClass('fadeIn');
 				$mainContent.addClass('blur');
-				$('body').addClass('no-scroll');
 				$overlay.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 					animationOver = true;
 				});
