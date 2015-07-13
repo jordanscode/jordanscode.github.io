@@ -15,7 +15,7 @@
 var questions = [
 	[
 		["Hi.", "I'm Jordan Staniscia", "Might I ask what your name is?"],
-		["", "That's a good name.", "Names are a funny thing", "It's one of the only deicions you don't make yourself"],
+		["", "That's a good name.", "Names are a funny thing", "It's one of the only decisions you don't make yourself"],
 		["jordan staniscia", "Welcome home, Jordan", "You have been enabled with Admin controls", "...", "Just kidding."],
 		["jordan", "A solid name, I must say", "Computers can't lie y'know..."],
 		["sarah li", "Hey Bae", "Want to go on another trip somewhere?", "The last few trips we've taken were so much fun!"],
@@ -224,7 +224,7 @@ function createAnswerField () {
 	        	$('#answer').removeClass('shake').removeClass('fadeInUp');
 	        	$('#answer').addClass('shake');
 	        	$('#answer').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-	        		$(this).removeClass('shake').removeClass('fadeInUp')
+	        		$(this).removeClass('shake').removeClass('fadeInUp');
 	        	});
 	        }
 	    }
@@ -241,19 +241,19 @@ function createAnswerMessage (answer) {
 
 	$('#container').append(htmlWrapperBeginning + answer + htmlWrapperEnding);
 
-	console.log(answer);
-	console.log(questions[currentQuestion]);
+	//console.log(answer);
+	//console.log(questions[currentQuestion]);
 	createMessage(findResponseForAnswer(answer, questions[currentQuestion]), 1, 1);
 }
 
 function findResponseForAnswer (answer, responses) {
 	for (k = 2; k < questions[currentQuestion].length; k++) {
-		console.log(k + " - " + responses[k][0] + " == " + answer);
+		//console.log(k + " - " + responses[k][0] + " == " + answer);
 		if ( answer.toLowerCase().match(responses[k][0]) ) {
 			return responses[k];
 		}
 	}
-	console.log("!= " + answer);
+	//console.log("!= " + answer);
 	return responses[1];
 }
 
@@ -270,6 +270,44 @@ function smoothScrollBottom () {
 	$('html,body').animate({ scrollTop: $(document).height() }, 1000);
 }
 
+function openCloseMenu () {
+	$menu = $('#menu');
+	$overlay = $('#menu-overlay');
+	$mainContent = $('#container');
+	var animationOver = true;
+
+	$menu.click(function(){
+		if (animationOver){
+			// If Active when you click
+			if ($(this).hasClass('active')) {
+				// Make Inactive
+				$menu.removeClass('active');
+				animationOver = false;
+				// Fade Out
+				$overlay.removeClass('fadeIn').addClass('fadeOut');
+				$mainContent.removeClass('blur');
+				$('body').removeClass('no-scroll');
+
+				$overlay.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+						// And when it's done animating, hide it
+		        		$(this).hide().removeClass('fadeOut');
+		        		animationOver = true;
+		        	});
+			} else {
+				$menu.addClass('active');
+				animationOver = false;
+				$overlay.show().addClass('fadeIn');
+				$mainContent.addClass('blur');
+				$('body').addClass('no-scroll');
+				$overlay.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+					animationOver = true;
+				});
+			}
+		}
+	});
+}
+
 $(document).ready(function() {
 	new storyController(questions);
+	new openCloseMenu();
 });
