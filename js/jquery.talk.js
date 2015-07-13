@@ -14,7 +14,7 @@
 
 var questions = [
 	[
-		["Hi.", "I'm Jordan", "What's your name?"],
+		["Hi.", "I'm Jordan Staniscia", "Might I ask what your name is?"],
 		["", "That's a good name.", "Names are a funny thing", "It's one of the only deicions you don't make yourself"],
 		["jordan staniscia", "Welcome home, Jordan", "You have been enabled with Admin controls", "...", "Just kidding."],
 		["jordan", "A solid name, I must say", "Computers can't lie y'know..."],
@@ -89,7 +89,7 @@ var questions = [
 		["ryan", "Ryan's are a unique type of person", "Ratchet at their core", "haha", "I kid, I kid"],
 		["zain", "I know a guy named Zain", "He has a unique relationship with the color black", "And pulls it off flawlessly"],
 		["francisco", "I know you eat healthy", "And I know you don't like beer", "But one day we will get beers and some greasy hamburger", "And it will be glorious"],
-		["jade", "I just started working with a guy named Jade", "He's got some great tattoos"],
+		["jade", "I just started working with a guy named Jade", "He's got some great tattoos and frontend skillz...", "with a Z..."],
 		["praveen", "Let's do animations, Praveen!", "You know you want to!"],
 		["simon", "Simon says touch your hand to your nose", "Simon says you probably hate this joke if you're name is really Simon", "Simon says I'm still running with it"],
 		["george", "George was my grandfather's name"],
@@ -105,7 +105,7 @@ var questions = [
 	],[
 		["What city are you in right now?"],
 		["", "People live there?", "I had no idea"],
-		["san francisco", "Hey, that's where Jordan lives too!", "You should grab coffee with him", "He likes coffee... almost a little too much..."],
+		["san francisco", "Hey, that's where I live too!", "You should grab coffee with me sometime", "I like coffee... almost a little too much..."],
 		["new york city", "So when are you moving to Williamsburg?", "Just kidding... Sorta..."],
 		["nyc|sf", "Too lazy to type in full words, eh?"],
 		["london", "I've never been!", "Would love to visit soon, though"],
@@ -118,7 +118,7 @@ var questions = [
 		["tampa", "Ooooh", "Is Mel's Hot Dogs still there?", "I get mine with pickles"],
 		["orlando", "I hope it's not lovebug season"]
 	],[
-		["How do you know Jordan?"],
+		["How do you know me?"],
 		["", "That's... quite specific"],
 		["work", "Oh you're a coworker?", "Awesome"],
 		["instacart", "Instacart, eh?", "Now take a Fernet shot", "I'm serious...", "You took one, right?", "TURNING WEBCAM ON TO VERIFY", "...", "Just Kidding..."],
@@ -127,16 +127,31 @@ var questions = [
 	],[
 		["What do you do for a living?"],
 		["", "That's quite the job!"],
-		["design|designer", "Jordan is a designer too!", "He works at Instacart on the consumer apps"],
+		["design|designer", "I'm a designer too!", "I work at Instacart on the consumer apps team"],
 		["dentist", "I have an honest quesiton", "Would it be cheaper keep my real teeth or to yank all my teeth out right now...", "and then replace them all with fake teeth?", "On second thought...", "I don't want to know"],
-		["engineer|programmer|eng", "Jordan works with programmers a lot", "He actually went to school for CompSci"],
+		["engineer|programmer|eng", "I work with programmers a lot", "And I actually went to school for CompSci"],
 		["doctor", "What's up, doc?", "You're not laughing..."],
 		["sales|business|bd", "ABC", "Always", "Be", "Closing"],
 		["gardener", "I envy people who make the world a little greener",],
 		["teacher", "That's an important job!", "Gotta teach the next generation, y'know?"],
-		["fireman|firefighter", "Sounds like a job that someone can never FIRE you from!", "Get it?", "..."]
+		["fireman|firefighter", "Sounds like a job that someone can never FIRE you from!", "Get it?", "..."],
+		["unemployed", "Vacation 365, eh?"]
 	],[
-		["It was nice meeting you."]
+		["This is going to be odd but...", "I'm curious – do you like dogs?"],
+		["", "Woah, don't get so excited"],
+		["yes", "I really like dogs too!"],
+		["love", "Love is a strong word", "But I'd describe myself that way too", "🐶🐶🐶"],
+		["no", "You have no soul, huh?", "In the words of Bill Murray, \"I’m suspicious of people who don’t like dogs, but I trust a dog when it doesn’t like a person.\""],
+		["hate", "HATE!?", "Wow", "That's a strong opinion"],
+		["cats", "Cats are cool and all", "But dogs!", "Dogs are forever"]
+	],[
+		["Speaking of dogs...", "What's your favorite animal?"],
+		["", "Good choice"]
+	],[
+		["Is that your spirit animal?"],
+		["", "Only someone in tune with their spirit animal would know that..."]
+	],[
+		["Look, I hate to do this", "But I have to run", "Sorry we couldn't chat even more, but it was a pleasure.", "You can follow me on <a href=\"http://twitter.com/jordanstaniscia\">Twitter</a> if you want to chat more", "See ya!"]
 	]
 ]
 var currentQuestion = 0,
