@@ -155,7 +155,7 @@ var questions = [
 		["cow", "Is that because they make really good hamburgers?", "..."],
 		["parrot", "Polly wanna cracker?"],
 		["kangaroo", "You must be quite...", "Jumpy!"],
-		["giraffe", "I feel like Giraffes would be fun to ride", "Tou must feel like you could do ANYTHING on the back of one of them!"],
+		["giraffe", "I feel like Giraffes would be fun to ride", "You must feel like you could do ANYTHING on the back of one of them!"],
 		["lion", "Simba...", "Remember... Who... You... Are..."],
 		["tiger", "Stripes on stripes on stripes"],
 		["wolf", "The lone wolf!"],
@@ -170,11 +170,17 @@ var questions = [
 		["Look, I hate to do this", "But I have to run", "Sorry we couldn't chat even more, but it was a pleasure.", "You can follow me on <a href=\"http://twitter.com/jordanstaniscia\">Twitter</a> if you want to chat more", "See ya!"]
 	]
 ]
+
+//Variables
 var currentQuestion = 0,
 	lastQuestion = questions.length - 1;
 
 function storyController (questions) {
 	current = 0;
+
+	Parse.initialize("bXR1spQKnockXOYWs65m68f1yREQCU0uUqlMFJ8J", "WSQLkkafg4dzgbZv22EdA7D3FAlns8826XFQllpC");
+
+
 	createMessage(questions[current][0]);
 }
 
@@ -264,6 +270,24 @@ function createAnswerMessage (answer) {
 
 	//console.log(answer);
 	//console.log(questions[currentQuestion]);
+
+
+	// --- ANALYTICS --- //
+	if (currentQuestion > 0){
+		var stringNum = 0; // The first response is always the question
+	} else {
+		var stringNum = 2; // The first question's position in it's array
+	}
+
+	var dimensions = {
+	  question: questions[currentQuestion][0][stringNum], // Which question is this?
+	  answer: answer
+	};
+	//console.log(dimensions);
+	// Send the dimensions to Parse along with the 'search' event
+	Parse.Analytics.track('read', dimensions)
+	// ------------------ //
+
 	createMessage(findResponseForAnswer(answer, questions[currentQuestion]), 1, 1);
 }
 
