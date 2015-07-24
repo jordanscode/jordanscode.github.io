@@ -147,10 +147,25 @@ var questions = [
 		["cats", "Cats are cool and all", "But dogs!", "Dogs are forever"]
 	],[
 		["Speaking of dogs...", "What's your favorite animal?"],
-		["", "Good choice"]
+		["", "Good choice"],
+		["monkey", "Quit monkeying around!", "But really... a monkey?"],
+		["dog", "I bet you have had a furry little friend in your life who has kept you company before"],
+		["cat", "Meow!", "When I was growing up, my cousin had some of those hairless cats...", "Pretty odd animals if you ask me"],
+		["snake", "A snake?", "Really?"],
+		["cow", "Is that because they make really good hamburgers?", "..."],
+		["parrot", "Polly wanna cracker?"],
+		["kangaroo", "You must be quite...", "Jumpy!"],
+		["giraffe", "I feel like Giraffes would be fun to ride", "Tou must feel like you could do ANYTHING on the back of one of them!"],
+		["lion", "Simba...", "Remember... Who... You... Are..."],
+		["tiger", "Stripes on stripes on stripes"],
+		["wolf", "The lone wolf!"],
+		["mouse", "You should change that... and quick!", "Disney might sue you for copyright!"],
+		["dinosaur|rex", "I'd like to jump on the back of a dinosaur", "a dinosaur with BATTLE ARMOR!"]
 	],[
 		["Is that your spirit animal?"],
-		["", "Only someone in tune with their spirit animal would know that..."]
+		["", "Only someone in tune with their spirit animal would know that..."],
+		["no", "It was worth a guess..."],
+		["yes", "I'm an amazing guesser, huh?"]
 	],[
 		["Look, I hate to do this", "But I have to run", "Sorry we couldn't chat even more, but it was a pleasure.", "You can follow me on <a href=\"http://twitter.com/jordanstaniscia\">Twitter</a> if you want to chat more", "See ya!"]
 	]
