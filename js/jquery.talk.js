@@ -1,3 +1,29 @@
+// Batman can see you looking at his code.
+//
+//             .  .
+//             |\_|\
+//             | a_a\
+//             | | "]
+//        ____| '-\___
+//        /.----.___.-'\
+//       //        _    \
+//      //   .-. (~v~) /|
+//     |'|  /\:  .--  / \
+//    // |-/  \_/____/\/~|
+//   |/  \ |  []_|_|_] \ |
+//   | \  | \ |___   _\ ]_}
+//   | |  '-' /   '.'  |
+//   | |     /    /|:  |
+//   | |     |   / |:  /\
+//   | |     /  /  |  /  \
+//   | |    |  /  /  |    \
+//   \ |    |/\/  |/|/\    \
+//    \|\ |\|  |  | / /\/\__\
+//     \ \| | /   | |__
+//        / |   |____)
+//          |_/
+
+
 //--------------------------------------TERMINOLOGY-------------------------------------------//
 //
 // Message = Generic message
@@ -109,7 +135,7 @@ var questions = [
 		["What city are you in right now?"],
 		["", "People live there?", "I had no idea"],
 		["san francisco", "Hey, that's where I live too!", "You should grab coffee with me sometime", "I like coffee... almost a little too much..."],
-		["new york city", "So when are you moving to Williamsburg?", "Just kidding... Sorta..."],
+		["new york city|new york", "So when are you moving to Williamsburg?", "Just kidding... Sorta..."],
 		["nyc|sf", "Too lazy to type in full words, eh?"],
 		["london", "I've never been!", "Would love to visit soon, though"],
 		["paris", "\"Soup DeJour\" is about the extent of my French"],
@@ -165,7 +191,8 @@ var questions = [
 		["tiger", "Stripes on stripes on stripes"],
 		["wolf", "The lone wolf!"],
 		["mouse", "You should change that... and quick!", "Disney might sue you for copyright!"],
-		["dinosaur|rex", "I'd like to jump on the back of a dinosaur", "a dinosaur with BATTLE ARMOR!"]
+		["dinosaur|rex", "I'd like to jump on the back of a dinosaur", "a dinosaur with BATTLE ARMOR!"],
+		["koala", "those drop bears!"]
 	],[
 		["Is that your spirit animal?"],
 		["", "Only someone in tune with their spirit animal would know that..."],
