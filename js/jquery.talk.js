@@ -24,6 +24,7 @@ var questions = [
 		["cj", "Sweet name", "I forsee many boats in your future", "YUMUNSIMINIOR!"],
 		["demi", "Hey, Demi!", "I'm eating airhead extremes while writing this", "\"sugar\" is all over my keyboard"],
 		["carlos|carlos solares", "Cool name", "I bet you work from home", "and by \"work\", I mean you play lots of 2k"],
+		["no", "Ouch...", "Not a great way to start a conversation", "and plus...", "the NSA just told me your name"],
 		["david bowie", "Funky, funky name, man"],
 		["bowie", "Let me put this in terms you may understand", "🐶 bark bark!"],
 		["ricki", "Hi, Mom!", "Miss ya!"],
@@ -101,7 +102,9 @@ var questions = [
 		["becky", "Becky!", "Socks are a great present, you know"],
 		["troy", "I have a friend named Troy", "He's a stand-up dude"],
 		["josh", "Are you my cousin Josh?", "My friend Josh?", "So many Joshuas in my life!"],
-		["ethan", "I have a friend named Ethan", "He likes that show The Inbetweeners a lot"]
+		["ethan", "I have a friend named Ethan", "He likes that show The Inbetweeners a lot"],
+		["poop", "Your parents have a shitty sense of humor..."],
+		["boobs", "Your parents must really like the female anatomy..."]
 	],[
 		["What city are you in right now?"],
 		["", "People live there?", "I had no idea"],
@@ -125,7 +128,8 @@ var questions = [
 		["instacart", "Instacart, eh?", "Now take a Fernet shot", "I'm serious...", "You took one, right?", "TURNING WEBCAM ON TO VERIFY", "...", "Just Kidding..."],
 		["high*school", "Class of 2010", "Back in Florida", "Good times!"],
 		["school", "Those must've been the days!"],
-		["twitter", "That blue bird is responsible for a lot of friendships"]
+		["twitter", "That blue bird is responsible for a lot of friendships"],
+		["¯\\_(ツ)_/¯", "Don't shrug at me", "we can be friends in the future"]
 	],[
 		["What do you do for a living?"],
 		["", "That's quite the job!"],
