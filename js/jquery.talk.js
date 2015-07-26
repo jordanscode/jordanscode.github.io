@@ -124,7 +124,8 @@ var questions = [
 		["work", "Oh you're a coworker?", "Awesome"],
 		["instacart", "Instacart, eh?", "Now take a Fernet shot", "I'm serious...", "You took one, right?", "TURNING WEBCAM ON TO VERIFY", "...", "Just Kidding..."],
 		["high*school", "Class of 2010", "Back in Florida", "Good times!"],
-		["school", "Those must've been the days!"]
+		["school", "Those must've been the days!"],
+		["twitter", "That blue bird is responsible for a lot of friendships"]
 	],[
 		["What do you do for a living?"],
 		["", "That's quite the job!"],
@@ -135,8 +136,8 @@ var questions = [
 		["sales|business|bd", "ABC", "Always", "Be", "Closing"],
 		["gardener", "I envy people who make the world a little greener",],
 		["teacher", "That's an important job!", "Gotta teach the next generation, y'know?"],
-		["fireman|firefighter", "Sounds like a job that someone can never FIRE you from!", "Get it?", "..."],
-		["unemployed", "Vacation 365, eh?"]
+		["unemployed", "Vacation 365, eh?"],
+		["ceo", "A very important businessman, are you?", "Running companies and shit!", "Cool"]
 	],[
 		["This is going to be odd but...", "I'm curious – do you like dogs?"],
 		["", "Woah, don't get so excited"],
