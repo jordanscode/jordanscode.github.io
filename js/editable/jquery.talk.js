@@ -171,7 +171,7 @@ var questions = [
 		["unemployed", "Vacation 365, eh?"],
 		["ceo", "A very important businessman, are you?", "Running companies and shit!", "Cool"],
 		["fuck", "...", "Geez...", "You're hard to have a conversation with"],
-		["artist|art|painter", "Wow!", "In an alternate reality, I think I might've been an artist.", "But I honestly enjoy using my creative abilities to creat function a little more", "That said, I've been trying to draw more"]
+		["artist|art|painter", "Wow!", "In an alternate reality, I think I might've been an artist.", "But I honestly enjoy using my creative abilities to create function a little more", "That said, I've been trying to draw more"]
 	],[
 		["This is going to be odd but...", "I'm curious – do you like dogs?"],
 		["", "Woah, don't get so excited"],
