@@ -130,7 +130,8 @@ var questions = [
 		["josh", "Are you my cousin Josh?", "My friend Josh?", "So many Joshuas in my life!"],
 		["ethan", "I have a friend named Ethan", "He likes that show The Inbetweeners a lot"],
 		["poop", "Your parents have a shitty sense of humor..."],
-		["boobs", "Your parents must really like the female anatomy..."]
+		["boobs", "Your parents must really like the female anatomy..."],
+		["fuck", "Do you kiss your mother with that mouth?", "I was only asking your name..."]
 	],[
 		["What city are you in right now?"],
 		["", "People live there?", "I had no idea"],
@@ -145,7 +146,8 @@ var questions = [
 		["coconut creek", "I used to live there!", "How's the ol' hangout doing?"],
 		["miami", "Ah", "A fellow Floridian!"],
 		["tampa", "Ooooh", "Is Mel's Hot Dogs still there?", "I get mine with pickles"],
-		["orlando", "I hope it's not lovebug season"]
+		["orlando", "I hope it's not lovebug season"],
+		["beijing", "I've never been there!", "But I'm hoping I'll take my first trip sometime soon"]
 	],[
 		["How do you know me?"],
 		["", "That's... quite specific"],
@@ -167,12 +169,14 @@ var questions = [
 		["gardener", "I envy people who make the world a little greener",],
 		["teacher", "That's an important job!", "Gotta teach the next generation, y'know?"],
 		["unemployed", "Vacation 365, eh?"],
-		["ceo", "A very important businessman, are you?", "Running companies and shit!", "Cool"]
+		["ceo", "A very important businessman, are you?", "Running companies and shit!", "Cool"],
+		["fuck", "...", "Geez...", "You're hard to have a conversation with"],
+		["artist|art|painter", "Wow!", "In an alternate reality, I think I might've been an artist.", "But I honestly enjoy using my creative abilities to creat function a little more", "That said, I've been trying to draw more"]
 	],[
 		["This is going to be odd but...", "I'm curious – do you like dogs?"],
 		["", "Woah, don't get so excited"],
 		["yes", "I really like dogs too!"],
-		["love", "Love is a strong word", "But I'd describe myself that way too", "🐶🐶🐶"],
+		["love|much|a lot", "Love is a strong word", "But I'd describe myself that way too", "🐶🐶🐶"],
 		["no", "You have no soul, huh?", "In the words of Bill Murray, \"I’m suspicious of people who don’t like dogs, but I trust a dog when it doesn’t like a person.\""],
 		["hate", "HATE!?", "Wow", "That's a strong opinion"],
 		["cats", "Cats are cool and all", "But dogs!", "Dogs are forever"]
@@ -192,12 +196,31 @@ var questions = [
 		["wolf", "The lone wolf!"],
 		["mouse", "You should change that... and quick!", "Disney might sue you for copyright!"],
 		["dinosaur|rex", "I'd like to jump on the back of a dinosaur", "a dinosaur with BATTLE ARMOR!"],
-		["koala", "those drop bears!"]
+		["koala", "those drop bears!"],
+		["penguin", "Flightless birds?", "They are pretty cute though..."]
 	],[
 		["Is that your spirit animal?"],
 		["", "Only someone in tune with their spirit animal would know that..."],
 		["no", "It was worth a guess..."],
 		["yes", "I'm an amazing guesser, huh?"]
+	],[
+		["Speaking of sprituality, would you say you are spiritual?"],
+		["", "That's one way to put it!"],
+		["very|yes", "You are at one with your spiritual side, huh?", "I wonder if that says anything about you on a deeper level"],
+		["no", "Science is more your thing?", "I'd say I'm in that ballpark as well"],
+		["not sure|don't know", "It's OK not to know", "You'll figure it out someday"]
+	],[
+		["This got serious very quickly, didn't it?", "Let's lighten it up...", "What's your favorite hobby?"],
+		["", "That's a hobby I never considered!", "Everyone needs a hobby to pass the time", "or let out their frustrations"],
+		["comic|comics", "I'm a huge comic collector", "You can find me at Mission Comics every Wednesday", "I'm a big Marvel guy, but I love the unique Indy comic", "I even have a website for comic fans.", "<a href=\"http://neuecomics.com\">Check out Neue Comics</a>"],
+		["programming|coding", "Got some side projects you've been coding?", "That's always fun to do on the weekends", "In fact, this site was a little side project of mine, obviously"],
+		["biking|bikes", "🚴🚴🚴🚴🚴"],
+		["rock climbing", "Is that dangerous?"],
+		["video games|gaming", "I play a lot of video games myself", "I can definitely take you in Super Smash Bros."],
+		["gardening", "Watching something grow is a really enjoyable thing", "Also, plants are so weird sometimes!"],
+		["nothing|no|none", "You should really find a hobby while you're young", "It makes you a more interesting person"],
+		["reading", "Book worm alert!", "I like reading a lot of sci-fi", "and I read even more comic books, if that counts as \"reading\""],
+		["art|painting|drawing", "being creative is a passion of mine too", "Colors, lines, expression...", "It's a rewarding hobby"]
 	],[
 		["Look, I hate to do this", "But I have to run", "Sorry we couldn't chat even more, but it was a pleasure.", "You can follow me on <a href=\"http://twitter.com/jordanstaniscia\">Twitter</a> if you want to chat more", "See ya!"]
 	]
