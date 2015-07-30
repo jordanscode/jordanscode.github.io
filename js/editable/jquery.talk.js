@@ -41,6 +41,7 @@
 var questions = {
 	"0": {
 		"name": "name",
+		"intro": true,
 		"question": ["Hi.", "I'm Jordan Staniscia", "Might I ask what your name is?"],
 		"answers": {
 			"default": {
@@ -639,7 +640,11 @@ function createMessage (messagesArray, i, response) {
 		htmlWrapperEnding = "</div></div>";
 
 	// If this message is not the first, use the previous to calculate a delay, otherwise use a number
-	var delay = (i > 0) ? calculateDelay(messagesArray[i - 1]) : 100;
+	var delay = (i > 0) ? calculateDelay(messagesArray[i - 1]) : 1000;
+	// delay override - Make first responses quick
+	if (!response && questions[currentQuestion].intro && i == 0){
+		delay = 50;
+	}
 
 	setTimeout(function(){
 		// if it's the last message in the series
@@ -718,17 +723,12 @@ function createAnswerMessage (answer) {
 
 	// --- ANALYTICS --- //
 	if (!local) {
-		if (currentQuestion > 0){
-			var stringNum = 0; // The first response is always the question
-		} else {
-			var stringNum = 2; // The first question's position in it's array
-		}
-
 		var dimensions = {
 		  question: questions[currentQuestion].name, // Which question is this?
-		  answer: answer
+		  answer: answer,
+		  created_at: Date.now()
 		};
-		//console.log(dimensions);
+		// console.log(dimensions);
 		// Send the dimensions to Parse along with the 'search' event
 		Parse.Analytics.track('read', dimensions);
 	}
@@ -756,13 +756,6 @@ function calculateDelay (string) {
 	var delay = string.split(" ").length * delayPerWord;
 	delay = (delay < delayPerWord * 3) ? delay + 400 : delay;
 	return delay;
-}
-
-function numOfElements(object){
-    var length = 0;
-    for (key in object)
-       length ++;
-    return length
 }
 
 function smoothScrollBottom () {
