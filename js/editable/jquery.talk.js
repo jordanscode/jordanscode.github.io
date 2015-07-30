@@ -675,7 +675,7 @@ function createMessage (messagesArray, i, response) {
 
 // Creates an answer input bubble
 function createAnswerField () {
-	var htmlAnswerField = "<div id=\"answer-container\" class=\"line\"><form action=\"#\" onsubmit=\"return false;\"><input type=\"text\" name=\"answer\" id=\"answer\" class=\"message message-right animated fadeInUp\" value=\"\" placeholder=\"Write a response…\"><input class='fake-button' type=\"button\" value=\"Send\" /></form><div class=\"clear\"></div></div>";
+	var htmlAnswerField = "<div id=\"answer-container\" class=\"line\"><form action=\"#\" onsubmit=\"return false;\"><input type=\"text\" name=\"answer\" id=\"answer\" class=\"message message-right animated fadeInUp\" value=\"\" placeholder=\"Write a response…\"></form><div class=\"clear\"></div></div>";
 
 	if (questions[currentQuestion].ending) {
 		return 1;
@@ -699,12 +699,7 @@ function createAnswerField () {
 	    }
 	});
 
-	$('#answer').on('touchstart', function () {
-        $(this).focus();   // inside this function the focus works
-        focused = $(this); // just for the example when I click next on fiddle
-    });
-
-	$('#answer').trigger('touchstart').focus();
+	$('#answer').focus();
 
 	smoothScrollBottom();
 }
