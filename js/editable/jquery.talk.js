@@ -675,7 +675,7 @@ function createMessage (messagesArray, i, response) {
 
 // Creates an answer input bubble
 function createAnswerField () {
-	var htmlAnswerField = "<div id=\"answer-container\" class=\"line\"><form action=\"#\" onsubmit=\"return false;\"><input type=\"text\" name=\"answer\" id=\"answer\" class=\"message message-right animated fadeInUp\" value=\"\" placeholder=\"Write a response…\"></div></form><div class=\"clear\"></div>";
+	var htmlAnswerField = "<div id=\"answer-container\" class=\"line\"><form action=\"#\" onsubmit=\"return false;\"><input type=\"text\" name=\"answer\" id=\"answer\" class=\"message message-right animated fadeInUp\" value=\"\" placeholder=\"Write a response…\"><input class='fake-button' type=\"button\" value=\"Send\" /></form><div class=\"clear\"></div></div>";
 
 	if (questions[currentQuestion].ending) {
 		return 1;

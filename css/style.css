@@ -158,6 +158,8 @@ a:active {
 	border-color: #3F74B0;
 }
 
+.fake-button {display: none;}
+
 @media screen and (max-width: 780px){
 	.container {
 		padding: 0 30px;
