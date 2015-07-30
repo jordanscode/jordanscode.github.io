@@ -675,7 +675,7 @@ function createMessage (messagesArray, i, response) {
 
 // Creates an answer input bubble
 function createAnswerField () {
-	var htmlAnswerField = "<div class=\"line\"><input type=\"text\" name=\"answer\" id=\"answer\" class=\"message message-right animated fadeInUp\" value=\"\" placeholder=\"Write a response…\"></div><div class=\"clear\"></div>";
+	var htmlAnswerField = "<div id=\"answer-container\" class=\"line\"><form action=\"#\" onsubmit=\"return false;\"><input type=\"text\" name=\"answer\" id=\"answer\" class=\"message message-right animated fadeInUp\" value=\"\" placeholder=\"Write a response…\"></div></form><div class=\"clear\"></div>";
 
 	if (questions[currentQuestion].ending) {
 		return 1;
@@ -687,7 +687,7 @@ function createAnswerField () {
 	    if(event.keyCode == 13){
 	    	var answer = $.trim($('#answer').val());
 	    	if (answer != ""){
-	    		$('#answer').remove();
+	    		$('#answer-container').remove();
 	        	createAnswerMessage(answer);
 	        } else {
 	        	$('#answer').removeClass('shake').removeClass('fadeInUp');
@@ -722,15 +722,17 @@ function createAnswerMessage (answer) {
 
 
 	// --- ANALYTICS --- //
+	var dimensions = {
+	  question: questions[currentQuestion].name, // Which question is this?
+	  answer: answer,
+	  created_at: Date.now()
+	};
+
 	if (!local) {
-		var dimensions = {
-		  question: questions[currentQuestion].name, // Which question is this?
-		  answer: answer,
-		  created_at: Date.now()
-		};
-		// console.log(dimensions);
 		// Send the dimensions to Parse along with the 'search' event
 		Parse.Analytics.track('read', dimensions);
+	} else {
+		console.log(dimensions);
 	}
 	// ------------------ //
 
