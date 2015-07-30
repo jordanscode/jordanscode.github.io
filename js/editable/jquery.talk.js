@@ -725,7 +725,7 @@ function createAnswerMessage (answer) {
 	var dimensions = {
 	  question: questions[currentQuestion].name, // Which question is this?
 	  answer: answer,
-	  created_at: Date.now()
+	  created_at: String(Date.now())
 	};
 
 	if (!local) {
