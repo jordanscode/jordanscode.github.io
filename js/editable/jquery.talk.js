@@ -321,18 +321,21 @@ var questions = {
 	},
 	"1": {
 		"name": "city",
-		"question": ["What city are you in right now?"],
+		"question": ["I live in San Francisco", "...if you didn't already know that", "What city are you in right now?"],
 		"answers": {
 			"default": {
 				"replies": ["People live there?", "I had no idea"]
 			},
 			"san francisco": {
-				"replies": ["Hey, that's where I live too!", "You should grab coffee with me sometime", "I like coffee... almost a little too much..."]
+				"replies": ["Cool, a local!", "You should grab coffee with me sometime", "I like coffee... almost a little too much..."]
+			},
+			"los angeles": {
+				"replies": ["So you're a Californian too!", "I make my way down south every so often", "We should grab ramen!"]
 			},
 			"new york city|new york": {
 				"replies": ["So when are you moving to Williamsburg?", "Just kidding... Sorta..."]
 			},
-			"nyc|sf": {
+			"nyc|sf|la": {
 				"replies": ["Too lazy to type in full words, eh?"]
 			},
 			"london": {
@@ -367,6 +370,15 @@ var questions = {
 			},
 			"chicago": {
 				"replies": ["I had a blast in Chicago in 2014", "Lots of public art there which is really cool", "But it gets way too cold for a Floridian like me to live there", "I'd die"]
+			},
+			"tokyo": {
+				"replies": ["I would love to visit there!", "In fact, I may go in the fall."]
+			},
+			"sao paulo": {
+				"replies": ["It's fun to speak with people from so far away", "Have you been to Hopi Hari?"]
+			},
+			"mumbai": {
+				"replies": ["It's fun to speak with people from so far away", "Mumbai is one of those destinations I'd love to see!", "Blast my lack of travel..."]
 			}
 		}
 	},
@@ -394,6 +406,9 @@ var questions = {
 			},
 			"twitter": {
 				"replies": ["That blue bird is responsible for a lot of friendships"]
+			},
+			"reddit": {
+				"replies": ["Welcomem redditor!", "Procrastinating, huh?"]
 			},
 			"¯\\_(ツ)_/¯": {
 				"replies": ["Don't shrug at me", "we can be friends in the future"]
@@ -442,6 +457,9 @@ var questions = {
 			},
 			"intern": {
 				"replies": ["Well now that I know that...", "Can you grab me a coffee?", "I take mine black."]
+			},
+			"mom|mother": {
+				"replies": ["Taking care of kids can be a thankless job", "Here's to the mothers of the world!"]
 			}
 		}
 	},
@@ -466,6 +484,13 @@ var questions = {
 			},
 			"cats": {
 				"replies": ["Cats are cool and all", "But dogs!", "Dogs are forever"]
+			},
+			,
+			"eat": {
+				"replies": ["EAT!?", "But... dogs!", "Alright, you dog eater..."]
+			},
+			"kill|death": {
+				"replies": ["You're kind of disturbed", "Moving along..."]
 			}
 		}
 	},
@@ -546,7 +571,7 @@ var questions = {
 	},
 	"7": {
 		"name": "are you spiritual?",
-		"question": ["Speaking of sprituality, would you say you are spiritual?"],
+		"question": ["My spiriti animal is Betty White.", "Speaking of sprituality, would you say you are spiritual?"],
 		"answers": {
 			"default": {
 				"replies": ["That's one way to put it!"]
