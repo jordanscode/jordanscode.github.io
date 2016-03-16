@@ -485,7 +485,6 @@ var questions = {
 			"cats": {
 				"replies": ["Cats are cool and all", "But dogs!", "Dogs are forever"]
 			},
-			,
 			"eat": {
 				"replies": ["EAT!?", "But... dogs!", "Alright, you dog eater..."]
 			},
