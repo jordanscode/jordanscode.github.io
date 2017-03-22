@@ -620,7 +620,7 @@ function storyController (questions) {
 	current = 0;
 
 	if (!local) {
-		Parse.initialize("bXR1spQKnockXOYWs65m68f1yREQCU0uUqlMFJ8J", "WSQLkkafg4dzgbZv22EdA7D3FAlns8826XFQllpC");
+		//Parse.initialize("bXR1spQKnockXOYWs65m68f1yREQCU0uUqlMFJ8J", "WSQLkkafg4dzgbZv22EdA7D3FAlns8826XFQllpC");
 	}
 
 	createMessage(questions[0].question);
@@ -725,9 +725,9 @@ function createAnswerMessage (answer) {
 
 	if (!local) {
 		// Send the dimensions to Parse along with the 'search' event
-		Parse.Analytics.track('read', dimensions);
+		//Parse.Analytics.track('read', dimensions);
 	} else {
-		console.log(dimensions);
+		//console.log(dimensions);
 	}
 	// ------------------ //
 
