@@ -408,10 +408,19 @@ var questions = {
 				"replies": ["That blue bird is responsible for a lot of friendships"]
 			},
 			"reddit": {
-				"replies": ["Welcomem redditor!", "Procrastinating, huh?"]
+				"replies": ["Welcome redditor!", "Procrastinating, huh?"]
 			},
 			"¯\\_(ツ)_/¯": {
 				"replies": ["Don't shrug at me", "we can be friends in the future"]
+			},
+			"medium": {
+				"replies": ["Oh so you've read something I wrote?", "Hover is dead, don't you know?"]
+			},
+			"speaker": {
+				"replies": ["You saw me on-stage?", "Learn anything?", "...", "Probably not"]
+			},
+			"MAU": {
+				"replies": ["Ahhh vegas!"]
 			}
 		}
 	},
@@ -547,6 +556,9 @@ var questions = {
 			},
 			"otter": {
 				"replies": ["Is it because they hold hands when they sleep?"]
+			},
+			"pegasus": {
+				"replies": ["How majestic!", "Neigh...."]
 			}
 		}
 	},
@@ -570,7 +582,7 @@ var questions = {
 	},
 	"7": {
 		"name": "are you spiritual?",
-		"question": ["My spiriti animal is Betty White.", "Speaking of sprituality, would you say you are spiritual?"],
+		"question": ["My spirit animal is Betty White.", "Speaking of spirituality, would you say you are spiritual?"],
 		"answers": {
 			"default": {
 				"replies": ["That's one way to put it!"]
