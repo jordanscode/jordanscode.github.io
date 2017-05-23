@@ -643,10 +643,6 @@ var local = (!document.location.hostname); // check if local
 function storyController (questions) {
 	current = 0;
 
-	if (!local) {
-		//Parse.initialize("bXR1spQKnockXOYWs65m68f1yREQCU0uUqlMFJ8J", "WSQLkkafg4dzgbZv22EdA7D3FAlns8826XFQllpC");
-	}
-
 	createMessage(questions[0].question);
 }
 
@@ -690,7 +686,10 @@ function createMessage (messagesArray, i, response) {
 		else {
 
 			$('#container').append(htmlWrapperBeginning + messagesArray[i] + htmlWrapperEnding);
-			smoothScrollBottom();
+			//Special case for chat
+			if ($(".active").attr('id') == "chat") {
+				smoothScrollBottom();
+			}
 			i++;
 			createMessage(messagesArray, i, response);
 		}
@@ -725,11 +724,14 @@ function createAnswerField () {
 
 	$('#answer').focus();
 
-	smoothScrollBottom();
+	//Special case for chat
+	if ($(".active").attr('id') == "chat") {
+		smoothScrollBottom();
+	}
 }
 
 function createAnswerMessage (answer) {
-	var htmlWrapperBeginning = "<div class=\"line\"><div class=\"message message-right animated pulse\">",
+	var htmlWrapperBeginning = "<div class=\"line\"><div class=\"message message-right animated tada\">",
 		htmlWrapperEnding = "</div></div><div class=\"clear\"></div>";
 
 	$('#container').append(htmlWrapperBeginning + answer + htmlWrapperEnding);
@@ -783,36 +785,44 @@ function smoothScrollBottom () {
 	$('html,body').animate({ scrollTop: $(document).height() }, 1000);
 }
 
-function openCloseMenu () {
-	$menu = $('#menu');
-	$overlay = $('#menu-overlay');
-	$mainContent = $('#container');
+function tabHandler () {
+	$tab = $('#menu ul li');
+	$content = $('.content');
+	$defaultTab = $('#chat');
 	var animationOver = true;
 
-	$menu.click(function(){
-		if (animationOver){
-			// If Active when you click
-			if ($(this).hasClass('active')) {
-				// Make Inactive
-				$menu.removeClass('active');
-				animationOver = false;
-				// Fade Out
-				$overlay.removeClass('fadeIn').addClass('fadeOut');
-				$mainContent.removeClass('blur');
+	$defaultTab.addClass('active');
+	$("#"+$defaultTab.attr('data-content')).addClass('activeContent');
 
-				$overlay.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-						// And when it's done animating, hide it
-		        		$(this).hide().removeClass('fadeOut');
-		        		animationOver = true;
-		        	});
-			} else {
-				$menu.addClass('active');
-				animationOver = false;
-				$overlay.show().addClass('fadeIn');
-				$mainContent.addClass('blur');
-				$overlay.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-					animationOver = true;
+	$tab.click(function(){
+		// If Active when you click
+		if (!$(this).hasClass('active')) {
+			animationOver = false;
+			var tabContent = "#"+$(this).attr('data-content');
+
+			// Make tab active
+			$tab.removeClass('active');
+			$(this).addClass('active');
+
+			// Remove old content
+			if ($('.activeContent') != $(tabContent)) {
+        		$('.activeContent').hide().removeClass('activeContent');
+        	}
+
+			// Make content active
+			$(tabContent).show().addClass('activeContent');
+
+			//Special case for chat
+			if ($(".active").attr('id') == "chat") {
+				smoothScrollBottom();
+				$(".message").each(function(){
+					$(this).removeClass('tada').removeClass('fadeInUp').addClass('fadeIn');
 				});
+			}
+
+			//Special case for about
+			if ($(".active").attr('id') == "about") {
+				$('html,body').animate({ scrollTop: 0 }, 0);
 			}
 		}
 	});
@@ -822,5 +832,5 @@ function openCloseMenu () {
 
 $(document).ready(function() {
 	new storyController(questions);
-	new openCloseMenu();
+	new tabHandler();
 });
