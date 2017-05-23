@@ -339,7 +339,7 @@ var questions = {
 				"replies": ["Too lazy to type in full words, eh?"]
 			},
 			"london": {
-				"replies": ["I've never been!", "Would love to visit soon, though"]
+				"replies": ["I've never been to the UK!", "Would love to visit soon, though"]
 			},
 			"paris": {
 				"replies": ["\"Soup DeJour\" is about the extent of my French"]
@@ -372,13 +372,28 @@ var questions = {
 				"replies": ["I had a blast in Chicago in 2014", "Lots of public art there which is really cool", "But it gets way too cold for a Floridian like me to live there", "I'd die"]
 			},
 			"tokyo": {
-				"replies": ["I would love to visit there!", "In fact, I may go in the fall."]
+				"replies": ["Tokyo is so much fun!", "I can't wait to get lost there again"]
 			},
 			"sao paulo": {
 				"replies": ["It's fun to speak with people from so far away", "Have you been to Hopi Hari?"]
 			},
 			"mumbai": {
 				"replies": ["It's fun to speak with people from so far away", "Mumbai is one of those destinations I'd love to see!", "Blast my lack of travel..."]
+			},
+			"las vegas|vegas": {
+				"replies": ["Been to Raising Cane's lately?", "That sauce haunts my dreams!"]
+			},
+			"canada": {
+				"replies": ["The great north!"]
+			},
+			"mexico": {
+				"replies": ["South of the border!"]
+			},
+			"boca|boca raton": {
+				"replies": ["My parents live in Boca"]
+			},
+			"new orleans": {
+				"replies": ["Please send me twelve grenades in the mail", "...", "on second thought, please don't"]
 			}
 		}
 	},
@@ -392,7 +407,7 @@ var questions = {
 			"dont|don't": {
 				"replies": ["Oh that is a shame.", "<a href=\"mailto:jordangetsthisemail@gmail.com\">Send me a note</a> or something if you want to"]
 			},
-			"work": {
+			"work|coworker": {
 				"replies": ["Oh you're a coworker?", "Awesome"]
 			},
 			"instacart": {
@@ -416,10 +431,10 @@ var questions = {
 			"medium": {
 				"replies": ["Oh so you've read something I wrote?", "Hover is dead, don't you know?"]
 			},
-			"speaker": {
+			"speaker|speaking": {
 				"replies": ["You saw me on-stage?", "Learn anything?", "...", "Probably not"]
 			},
-			"MAU|mau": {
+			"mau": {
 				"replies": ["Ahhh vegas!"]
 			}
 		}
