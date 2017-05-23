@@ -419,7 +419,7 @@ var questions = {
 			"speaker": {
 				"replies": ["You saw me on-stage?", "Learn anything?", "...", "Probably not"]
 			},
-			"MAU": {
+			"MAU|mau": {
 				"replies": ["Ahhh vegas!"]
 			}
 		}
@@ -432,7 +432,7 @@ var questions = {
 				"replies": ["That's quite the job!"]
 			},
 			"design|designer": {
-				"replies": ["I'm a designer too!", "I work at Instacart on the consumer apps team"]
+				"replies": ["I'm a designer too!", "I work at Instacart on the customer core experience team"]
 			},
 			"dentist": {
 				"replies": ["I have an honest quesiton", "Would it be cheaper keep my real teeth or to yank all my teeth out right now...", "and then replace them all with fake teeth?", "On second thought...", "I don't want to know"]
