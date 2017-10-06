@@ -324,7 +324,7 @@ var questions = {
 		"question": ["I live in San Francisco", "...if you didn't already know that", "What city are you in right now?"],
 		"answers": {
 			"default": {
-				"replies": ["People live there?", "I had no idea"]
+				"replies": ["I've never been there... yet", "I love traveling so perhaps I'll visit one day"]
 			},
 			"san francisco": {
 				"replies": ["Cool, a local!", "You should grab coffee with me sometime", "I like coffee... almost a little too much..."]
@@ -393,7 +393,19 @@ var questions = {
 				"replies": ["My parents live in Boca"]
 			},
 			"new orleans": {
-				"replies": ["Please send me twelve grenades in the mail", "...", "on second thought, please don't"]
+				"replies": ["Please send me twelve 🍹grenades in the mail", "...", "on second thought, please don't"]
+			},
+			"berlin": {
+				"replies": ["If you ever take a trip to the states", "I'd pay you money to bring me a doner kebab or some currywurst"]
+			},
+			"stockholm": {
+				"replies": ["I'm super jealous of the shops you get to visit", "*drool*"]
+			},
+			"amsterdam": {
+				"replies": ["What a gorgeous city!", "Every corner was so exciting for me when I visited", "and those canals are amaizng!"]
+			},
+			"copenhagen": {
+				"replies": ["Tell the baristas at The Coffee Collective that Jordan says hi"]
 			}
 		}
 	},
@@ -431,11 +443,14 @@ var questions = {
 			"medium": {
 				"replies": ["Oh so you've read something I wrote?", "Hover is dead, don't you know?"]
 			},
-			"speaker|speaking": {
+			"speaker|speaking|talk": {
 				"replies": ["You saw me on-stage?", "Learn anything?", "...", "Probably not"]
 			},
 			"mau": {
 				"replies": ["Ahhh vegas!"]
+			},
+			"initialized": {
+				"replies": ["Oh so you're into design systems?", "Let me know if you ever want to chat more about the topic"]
 			}
 		}
 	},
@@ -484,6 +499,9 @@ var questions = {
 			},
 			"mom|mother": {
 				"replies": ["Taking care of kids can be a thankless job", "Here's to the mothers of the world!"]
+			},
+			"recruiter|recruiting": {
+				"replies": ["You're probably looking for the about page to learn a bit more about me", "Click that tab below ↘️"]
 			}
 		}
 	},
