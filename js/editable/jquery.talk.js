@@ -406,6 +406,9 @@ var questions = {
 			},
 			"copenhagen": {
 				"replies": ["Tell the baristas at The Coffee Collective that Jordan says hi"]
+			},
+			"shanghai": {
+				"replies": ["I've never been there!", "But I'm hoping I'll take my first trip sometime soon"]
 			}
 		}
 	},
@@ -830,7 +833,9 @@ function smoothScrollBottom () {
 	$('html,body').animate({ scrollTop: $(document).height() }, 1000);
 }
 
-function tabHandler () {
+// Tabs
+
+/*function tabHandler () {
 	$tab = $('#menu ul li');
 	$content = $('.content');
 	$defaultTab = $('#chat');
@@ -871,7 +876,7 @@ function tabHandler () {
 			}
 		}
 	});
-}
+}*/
 
 // })(); END GLOBAL
 
