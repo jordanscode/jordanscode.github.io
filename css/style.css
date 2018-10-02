@@ -90,6 +90,7 @@ a:active {
 	width: 80px;
 	display: block;
 	background-color: #fff;
+	box-shadow: 0 1px 16px 0 rgba(0,0,0,0.12);
 	position: fixed;
 	z-index: 3;
 	bottom: 0;
@@ -97,35 +98,51 @@ a:active {
 
 #menu ul {
 	/*margin: 0 auto;*/
-	padding: 32px 0;
+	padding: 12px 0;
 }
 
 #menu ul li {
 }
 
 #menu ul li a {
-	width: 64px;
-	height: 64px;
 	display: block;
 	border-radius: 32px;
-	line-height: 14px;
-	font-size: 12px;
+	font-size: 11px;
+	line-height: 12px;
 	color: #747474;
 	text-align: center;
 	font-weight: 500;
-	margin: 0 8px 16px 8px;
+	margin: 0 auto 12px auto;
 	transition: background-color 0.25s, color 0.25s;
+	text-decoration: none;
+	width: 64px;
+	height: 64px;
 }
 
 #menu ul li a:hover {
 	cursor: pointer;
-	background-color: #f0f0f0;
+	background-color: rgba(0, 0, 0, 0.05);
 }
 
-#menu ul li.active {
-	border-top: 2px solid #00B0FF;
-	color: #00B0FF;
+#menu ul li a:active {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.1);
 }
+
+#menu ul li.active a {
+	/*color: #00B0FF;
+	border-bottom: 2px solid;*/
+}
+
+#menu ul li a svg {
+	width: 24px;
+	height: 24px;
+	margin: 12px 16px 4px 16px;
+}
+
+.square{fill:#f23b55;}
+.circle{fill:#009de6;}
+.triangle{fill:#ffd200;}
 
 #about-container {
 }
@@ -157,6 +174,10 @@ a:active {
 	text-decoration: none;
 }
 
+#about-container p a:hover {
+	text-decoration: underline;
+}
+
 #about-container a.big-link {
 	font-size: 24px;
 	line-height: 36px;
@@ -175,11 +196,15 @@ a:active {
 	background-color: #efefef;
 }
 
+#about-container i {
+	font-style: italic;
+}
+
 #about-container .section {
 	margin-bottom: 32px;
 }
 
-@media screen and (max-width: 780px){
+@media screen and (max-width: 960px){
 	.container {
 		padding: 0 30px;
 	}
@@ -215,8 +240,6 @@ a:active {
 		height: 56px;
 		width: 100%;
 		display: block;
-		background-color: #fff;
-		box-shadow: 0 1px 16px 0 rgba(0,0,0,0.12);
 		position: fixed;
 		z-index: 3;
 		bottom: 0;
@@ -229,30 +252,18 @@ a:active {
 	}
 
 	#menu ul li {
-		display: inline-block;
+		float: left;
+		width: 33.3%;
 	}
 
 	#menu ul li a {
-		width: 50%;
-		height: 56px;
 		display: block;
-		line-height: 52px;
-		font-size: 20px;
-		color: #747474;
-		text-align: center;
-		float: left;
-		font-weight: 500;
-		border-top: 2px solid #fff;
-		padding-bottom: 2px;
-		transition: color 0.25s, border 0.25s;
+		margin: 0 auto;
+		width: 56px;
+		height: 56px;
 	}
 
-	#menu ul li a:hover {
-		cursor: pointer;
-	}
-
-	#menu ul li a.active {
-		border-top: 2px solid #00B0FF;
-		color: #00B0FF;
+	#menu ul li a svg {
+		margin-top: 8px;
 	}
 }
