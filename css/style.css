@@ -9,7 +9,7 @@ input {
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 a, a:visited {
@@ -145,6 +145,7 @@ a:active {
 .triangle{fill:#ffd200;}
 
 #about-container {
+	position: relative;
 }
 
 #about-container img {
@@ -155,7 +156,26 @@ a:active {
 	margin-bottom: 32px;
 }
 
+#about-container img.hero {
+	width: 90%;
+	margin: 0 auto;
+	position: absolute;
+	left: -15%;
+	z-index: -1;
+	max-height: 900px;
+	width: auto;
+}
+
 #about-container h1 {
+	font-size: 48px;
+	line-height: 64px;
+	font-weight: bold;
+	color: #393939;
+	margin-bottom: 32px;
+	padding-top: 690px;
+}
+
+#about-container h2 {
 	font-size: 36px;
 	line-height: 48px;
 	font-weight: bold;
@@ -203,10 +223,28 @@ a:active {
 #about-container .section {
 	margin-bottom: 32px;
 }
+@media screen and (max-width: 1200px){
+	#about-container img.hero {
+		left: -5%;
+		max-height: 700px;
+	}
+	#about-container h1 {
+		padding-top: 490px;
+	}
+}
 
 @media screen and (max-width: 960px){
 	.container {
 		padding: 0 30px;
+	}
+
+	#about-container img.hero {
+		top: -32px;
+		right: 0;
+		left: auto;
+		max-width: 400px;
+		width: auto;
+		border-radius: 2px 0 0 2px
 	}
 
 	#about-container h1 {
@@ -214,6 +252,13 @@ a:active {
 		line-height: 32px;
 		margin-bottom: 24px;
 	}
+
+	#about-container h2 {
+		font-size: 24px;
+		line-height: 32px;
+		margin-bottom: 24px;
+	}
+
 
 	#about-container p {
 		font-size: 18px;
@@ -265,5 +310,14 @@ a:active {
 
 	#menu ul li a svg {
 		margin-top: 8px;
+	}
+}
+
+@media screen and (max-width: 480px){
+	#about-container img.hero {
+		max-height: 400px;
+	}
+	#about-container h1 {
+		padding-top: 268px;
 	}
 }
