@@ -144,11 +144,11 @@ a:active {
 .circle{fill:#009de6;}
 .triangle{fill:#ffd200;}
 
-#about-container {
+.content-container {
 	position: relative;
 }
 
-#about-container img {
+.content-container img {
 	width: 100%;
 	max-width: 720px;
 	height: auto;
@@ -166,16 +166,19 @@ a:active {
 	width: auto;
 }
 
-#about-container h1 {
+.content-container  h1 {
 	font-size: 48px;
 	line-height: 64px;
 	font-weight: bold;
 	color: #393939;
 	margin-bottom: 32px;
+}
+
+#about-container h1 {
 	padding-top: 690px;
 }
 
-#about-container h2 {
+.content-container h2 {
 	font-size: 36px;
 	line-height: 48px;
 	font-weight: bold;
@@ -183,22 +186,22 @@ a:active {
 	margin-bottom: 32px;
 }
 
-#about-container p {
+.content-container p {
 	font-size: 24px;
 	line-height: 32px;
 	color: #747474;
 	margin-bottom: 32px;
 }
 
-#about-container p a {
+.content-container p a {
 	text-decoration: none;
 }
 
-#about-container p a:hover {
+.content-container p a:hover {
 	text-decoration: underline;
 }
 
-#about-container a.big-link {
+.content-container a.big-link {
 	font-size: 24px;
 	line-height: 36px;
 	border-radius: 32px;
@@ -209,18 +212,18 @@ a:active {
 	text-decoration: none;
 }
 
-#about-container a.big-link:hover {
+.content-container a.big-link:hover {
 	border-color: #3F74B0;
 }
-#about-container a.big-link:active {
+.content-container a.big-link:active {
 	background-color: #efefef;
 }
 
-#about-container i {
+.content-container i {
 	font-style: italic;
 }
 
-#about-container .section {
+.content-container .section {
 	margin-bottom: 32px;
 }
 @media screen and (max-width: 1200px){
@@ -247,26 +250,26 @@ a:active {
 		border-radius: 2px 0 0 2px
 	}
 
-	#about-container h1 {
+	.content-container h1 {
 		font-size: 24px;
 		line-height: 32px;
 		margin-bottom: 24px;
 	}
 
-	#about-container h2 {
+	.content-container h2 {
 		font-size: 24px;
 		line-height: 32px;
 		margin-bottom: 24px;
 	}
 
 
-	#about-container p {
+	.content-container p {
 		font-size: 18px;
 		line-height: 28px;
 		margin-bottom: 24px;
 		font-weight: 500;
 	}
-	#about-container a.big-link {
+	.content-container a.big-link {
 		font-size: 17px;
 		line-height: 20px;
 		border-radius: 18px;
