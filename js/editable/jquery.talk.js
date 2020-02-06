@@ -42,7 +42,7 @@ var questions = {
 	"0": {
 		"name": "name",
 		"intro": true,
-		"question": ["Hi, I'm Jordan Staniscia", "I’m a product designer, advisor, urbanist, and avid reader from San Francisco, CA. Currently, I work at Abstract, building tools to help designers like myself be more transparent and communicate effectively.", "Might I ask what your name is?"],
+		"question": ["Hi, I'm Jordan Staniscia", "I’m a product designer, advisor, urbanist, and avid reader from San Francisco, CA. Currently, I work at Abstract, building tools to help designers like myself be more transparent and communicate effectively.", "But enough about me. What’s your name?"],
 		"answers": {
 			"default": {
 				"replies": ["That's a good name.", "Names are a funny thing", "It's one of the only decisions you don't make yourself"]

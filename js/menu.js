@@ -3,13 +3,13 @@ var menuString = `
   <ul>
     <li id="chat">
       <a href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" data-name="square" viewBox="0 0 24 24"><title>square</title><g data-name="Icon/Square"><rect class="square" x="2" y="2" width="20" height="20"/></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" data-name="circle" viewBox="0 0 24 24"><title>circle</title><g data-name="Icon/Circle"><circle class="circle" cx="12" cy="12" r="11"/></g></svg>
         Chat
       </a>
     </li>
     <li id="about" class="active">
       <a href="about.html">
-        <svg xmlns="http://www.w3.org/2000/svg" data-name="circle" viewBox="0 0 24 24"><title>circle</title><g data-name="Icon/Circle"><circle class="circle" cx="12" cy="12" r="11"/></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" data-name="square" viewBox="0 0 24 24"><title>square</title><g data-name="Icon/Square"><rect class="square" x="2" y="2" width="20" height="20"/></g></svg>
         About
       </a>
     </li>
