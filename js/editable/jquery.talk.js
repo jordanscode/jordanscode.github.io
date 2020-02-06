@@ -42,7 +42,7 @@ var questions = {
 	"0": {
 		"name": "name",
 		"intro": true,
-		"question": ["Hi.", "I'm Jordan Staniscia", "Might I ask what your name is?"],
+		"question": ["Hi, I'm Jordan Staniscia", "I’m a product designer, advisor, urbanist, and avid reader from San Francisco, CA. Currently, I work at Abstract, building tools to help designers like myself be more transparent and communicate effectively.", "Might I ask what your name is?"],
 		"answers": {
 			"default": {
 				"replies": ["That's a good name.", "Names are a funny thing", "It's one of the only decisions you don't make yourself"]
@@ -57,13 +57,13 @@ var questions = {
 				"replies": ["Hey Bae", "Want to go on another trip somewhere?", "The last few trips we've taken were so much fun!"]
 			},
 			"sarah": {
-				"replies": ["Wow", "That's also my girlfriend's name"]
+				"replies": ["Wow", "That's also my significant other's name"]
 			},
 			"sara": {
 				"replies": ["I'm unsure what happened to the 'H' in your name", "Perhaps it was an ingenious simplification of an unnecessary letter", "Or perhap a lazy missing one!"]
 			},
 			"cj": {
-				"replies": ["Sweet name", "I forsee many boats in your future", "YUMUNSIMINIOR!"]
+				"replies": ["Sweet name", "YUMUNSIMINIOR!"]
 			},
 					"demi": {
 				"replies": ["Hey, Demi!", "I'm eating airhead extremes while writing this", "\"sugar\" is all over my keyboard"]
@@ -87,7 +87,7 @@ var questions = {
 				"replies": ["Hi, Dad!", "Hope you're having a great day!", "Say hi to Bowie for me?"]
 			},
 			"peter": {
-				"replies": ["That's my dad's name", "and I have a coworker named Peter", "And my girlfriend's dad's name", "so many people named Peter!"]
+				"replies": ["That's my dad's name", "and I have a coworker named Peter", "And my significant other's dad's name", "so many people named Peter!"]
 			},
 			"corey": {
 				"replies": ["Hey, Corey!", "Remember that time we paintballed Ross's car?", "haha", "Good times..."]
@@ -435,7 +435,7 @@ var questions = {
 				"replies": ["Those must've been the days!"]
 			},
 			"twitter": {
-				"replies": ["That blue bird is responsible for a lot of friendships"]
+				"replies": ["That blue bird is responsible for a lot of friendships. But also I really need to stop spending so much time on it."]
 			},
 			"reddit": {
 				"replies": ["Welcome redditor!", "Procrastinating, huh?"]
@@ -454,6 +454,12 @@ var questions = {
 			},
 			"initialized": {
 				"replies": ["Oh so you're into design systems?", "Let me know if you ever want to chat more about the topic"]
+			},
+			"abstract": {
+				"replies": ["This isn't to different than speaking to me on Slack, is it?"]
+			},
+			"a talk|a keynote|talk|speech|presentation": {
+				"replies": ["Does that mean you saw me speak somewhere? How'd I do? Probably better than it went in my head!"]
 			}
 		}
 	},
@@ -504,7 +510,7 @@ var questions = {
 				"replies": ["Taking care of kids can be a thankless job", "Here's to the mothers of the world!"]
 			},
 			"recruiter|recruiting": {
-				"replies": ["You're probably looking for the about page to learn a bit more about me", "Click that tab below ↘️"]
+				"replies": ["You're probably looking for the about page to learn a bit more about me", "Click the about page!"]
 			}
 		}
 	},
@@ -824,8 +830,12 @@ function findResponseForAnswer (answer, possibleAnswers) { //responses
 function calculateDelay (string) {
 	// 275 words per minute in milliseconds plus a constant
 	var delayPerWord = 218;
+	// delay is the amount of words multiplied by the delayPerWord
 	var delay = string.split(" ").length * delayPerWord;
+	// if the delay is smaller than a 3 word sentence, add some timing.
 	delay = (delay < delayPerWord * 3) ? delay + 400 : delay;
+	// if the delay is bigger than a 20 word sentence, max it out to 14 so we don't have a super long delay.
+	delay = (delay > delayPerWord * 14) ? delayPerWord * 14 : delay;
 	return delay;
 }
 
@@ -882,5 +892,5 @@ function smoothScrollBottom () {
 
 $(document).ready(function() {
 	new storyController(questions);
-	new tabHandler();
+	//new tabHandler();
 });
