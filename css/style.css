@@ -291,6 +291,7 @@ a:active {
 	#menu {
 		height: 56px;
 		padding: 0;
+		padding-bottom: env(safe-area-inset-bottom);
 		width: 100%;
 		display: block;
 		position: fixed;
