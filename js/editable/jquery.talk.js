@@ -740,10 +740,9 @@ function createMessage (messagesArray, i, response) {
 		else {
 
 			$('#container').append(htmlWrapperBeginning + messagesArray[i] + htmlWrapperEnding);
-			//Special case for chat
-			if ($(".active").attr('id') == "chat") {
-				smoothScrollBottom();
-			}
+
+			smoothScrollBottom();
+
 			i++;
 			createMessage(messagesArray, i, response);
 		}
@@ -778,10 +777,7 @@ function createAnswerField () {
 
 	$('#answer').focus();
 
-	//Special case for chat
-	if ($(".active").attr('id') == "chat") {
-		smoothScrollBottom();
-	}
+	smoothScrollBottom();
 }
 
 function createAnswerMessage (answer) {
