@@ -227,8 +227,8 @@ a:active {
 .card-link-container {
 	display: grid;
 	grid-template-columns: auto auto;
-	grid-column-gap: 24px;
-	grid-row-gap: 24px;
+	grid-column-gap: 16px;
+	grid-row-gap: 16px;
 	margin-bottom: 24px;
 }
 
@@ -245,6 +245,8 @@ a.card-link {
 	font-weight: 600;
 	color: #32333E;
 	min-height: 268px;
+	background-color: #fff;
+	transition: border 0.15s;
 	}
 	a.card-link img {
 		width: 100%;
@@ -272,11 +274,10 @@ a.card-link:active {
 @media screen and (max-width: 1440px){
 	#about-container img.hero {
 		max-height: 600px;
-		width: auto;
 	}
 
 	#about-container h1 {
-		padding-top: 496px;
+		padding-top: 466px;
 	}
 }
 
