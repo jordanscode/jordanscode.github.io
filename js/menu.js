@@ -4,7 +4,7 @@ var menuString = `
     <li id="chat">
       <a href="index.html">
         <svg xmlns="http://www.w3.org/2000/svg" data-name="circle" viewBox="0 0 24 24"><title>circle</title><g data-name="Icon/Circle"><circle class="circle" cx="12" cy="12" r="11"/></g></svg>
-        Chat
+        Home
       </a>
     </li>
     <li id="about" class="active">

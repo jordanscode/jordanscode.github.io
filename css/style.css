@@ -225,6 +225,15 @@ a:active {
 	background-color: #efefef;
 }
 
+a.breadcrumb {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+a.breadcrumb:before {
+	/*content: url("data:image/svg+xml; utf8, <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M4.59503 13.1791C3.37703 12.391 3.37704 10.609 4.59503 9.82086L15.9135 2.49715C17.2442 1.63609 19 2.59128 19 4.17629L19 18.8237C19 20.4087 17.2442 21.3639 15.9135 20.5029L4.59503 13.1791Z\" fill=\"#009DE6\"/></svg>)";*/
+}
+
 .card-link-container {
 	display: grid;
 	grid-template-columns: auto auto;
@@ -247,7 +256,7 @@ a.card-link {
 	min-height: 268px;
 	background-color: #fff;
 	box-shadow: 0 1px 8px 0 rgba(0,0,0,0.1);
-	transition: box-shadow 0.15s;
+	transition: box-shadow 0.15s, transform 0.05s;
 	}
 	a.card-link img {
 		width: 100%;
@@ -261,7 +270,8 @@ a.card-link:hover {
 	box-shadow: 0 2px 16px 0 rgba(0,0,0,0.2);
 }
 a.card-link:active {
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.12);
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
+	transform: matrix(0.96, 0, 0, 0.96, 0, 0);
 }
 
 .content-container i {
