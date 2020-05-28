@@ -57,10 +57,10 @@ var questions = {
 				"replies": ["Hey Bae", "Want to go on another trip somewhere?", "The last few trips we've taken were so much fun!"]
 			},
 			"sarah": {
-				"replies": ["Wow", "That's also my significant other's name"]
+				"replies": ["Good name", "That's also my significant other's name"]
 			},
 			"sara": {
-				"replies": ["I'm unsure what happened to the 'H' in your name", "Perhaps it was an ingenious simplification of an unnecessary letter", "Or perhap a lazy missing one!"]
+				"replies": ["I'm unsure what happened to the 'H' in your name", "Perhaps it was an ingenious simplification of an unnecessary letter", "Or perhap a lazy missing one..."]
 			},
 			"cj": {
 				"replies": ["Sweet name", "YUMUNSIMINIOR!"]
@@ -73,6 +73,9 @@ var questions = {
 			},
 			"no": {
 				"replies": ["Ouch...", "Not a great way to start a conversation", "and plus...", "the NSA just told me your name"]
+			},
+			"test": {
+				"replies": ["TESTING HAS COMMENCED", "ALL TESTS ARE POSITIVE", "WEBSITE WILL NOW SELF DESTRUCT IN...", "3...", "2...", "1...", "Nonono... I shut it down just in time. What were you thinking running that command!? Well anyway..."]
 			},
 			"david bowie": {
 				"replies": ["Funky, funky name, man"]
@@ -87,7 +90,7 @@ var questions = {
 				"replies": ["Hi, Dad!", "Hope you're having a great day!", "Say hi to Bowie for me?"]
 			},
 			"peter": {
-				"replies": ["That's my dad's name", "and I have a coworker named Peter", "And my significant other's dad's name", "so many people named Peter!"]
+				"replies": ["That's my dad's name", "And my significant other's dad's name", "so many people named Peter!"]
 			},
 			"corey": {
 				"replies": ["Hey, Corey!", "Remember that time we paintballed Ross's car?", "haha", "Good times..."]
@@ -316,7 +319,10 @@ var questions = {
 			},
 			"fuck": {
 				"replies": ["Do you kiss your mother with that mouth?", "I was only asking your name..."]
-				}
+			},
+			"tim": {
+				"replies": ["Is it really you, Tim?", "Or is it...", "MAXVOLTAR?"]
+			}
 		}
 	},
 	"1": {
@@ -456,10 +462,13 @@ var questions = {
 				"replies": ["Oh so you're into design systems?", "Let me know if you ever want to chat more about the topic"]
 			},
 			"abstract": {
-				"replies": ["This isn't to different than speaking to me on Slack, is it?"]
+				"replies": ["This isn't to different than speaking to me on Slack, is it?", "INSERT FUNNY EMOJI"]
 			},
 			"a talk|a keynote|talk|speech|presentation": {
 				"replies": ["Does that mean you saw me speak somewhere? How'd I do? Probably better than it went in my head!"]
+			},
+			"twitch": {
+				"replies": ["So you watch me stream?", "Be honest — how boring is it?"]
 			}
 		}
 	},
@@ -471,7 +480,7 @@ var questions = {
 				"replies": ["That's quite the job!"]
 			},
 			"design|designer": {
-				"replies": ["I'm a designer too!", "I work at Instacart on the customer core experience team"]
+				"replies": ["I'm a designer too!", "But aren't we ALL designers?", "…", "Nah."]
 			},
 			"dentist": {
 				"replies": ["I have an honest quesiton", "Would it be cheaper keep my real teeth or to yank all my teeth out right now...", "and then replace them all with fake teeth?", "On second thought...", "I don't want to know"]
