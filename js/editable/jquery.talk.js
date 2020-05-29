@@ -426,7 +426,7 @@ var questions = {
 				"replies": ["That's... quite specific"]
 			},
 			"dont|don't": {
-				"replies": ["Oh that is a shame.", "<a href=\"mailto:jordangetsthisemail@gmail.com\">Send me a note</a> or something if you want to"]
+				"replies": ["Oh that is a shame.", "<a href=\"https://jor.dance/contact.html\">Send me a note</a> or something if you want to"]
 			},
 			"work|coworker": {
 				"replies": ["Oh you're a coworker?", "Awesome"]
@@ -468,7 +468,7 @@ var questions = {
 				"replies": ["Does that mean you saw me speak somewhere? How'd I do? Probably better than it went in my head!"]
 			},
 			"twitch": {
-				"replies": ["So you watch me stream?", "Be honest — how boring is it?"]
+				"replies": ["So you watch me stream?", "Be honest — how boring is it?", "Okay, maybe don't answer that one..."]
 			}
 		}
 	},
@@ -518,8 +518,8 @@ var questions = {
 			"mom|mother": {
 				"replies": ["Taking care of kids can be a thankless job", "Here's to the mothers of the world!"]
 			},
-			"recruiter|recruiting": {
-				"replies": ["You're probably looking for the about page to learn a bit more about me", "Click the about page!"]
+			"recruiter|recruiting|hiring|headhunter": {
+				"replies": ["You're probably looking for the <a href=\"https://jor.dance/contact.html\">about page</a> to learn a bit more about me", "Click the about page!"]
 			}
 		}
 	},
@@ -610,6 +610,9 @@ var questions = {
 			},
 			"pegasus": {
 				"replies": ["How majestic!", "Neigh...."]
+			},
+			"frog": {
+				"replies": ["RIBBIT RIBBIT", "Frogs!"]
 			}
 		}
 	},
@@ -660,7 +663,7 @@ var questions = {
 				"replies": ["That's a hobby I never considered!", "Everyone needs a hobby to pass the time", "or let out their frustrations"]
 			},
 			"comic|comics": {
-				"replies": ["I'm a huge comic collector", "You can find me at Mission Comics every Wednesday", "I'm a big Marvel guy, but I love the unique Indy comic", "I even have a website for comic fans.", "<a href=\"http://neuecomics.com\">Check out Neue Comics</a>"]
+				"replies": ["I'm a huge comic collector", "You can find me at Mission Comics every Wednesday", "I'm a big Marvel guy, but I love the unique Indy comic", "I even used to run a website for comic fans."]
 			},
 			"programming|coding|code": {
 				"replies": ["Got some side projects you've been coding?", "That's always fun to do on the weekends", "In fact, this site was a little side project of mine, obviously"]
@@ -685,12 +688,15 @@ var questions = {
 			},
 			"art|painting|drawing": {
 				"replies": ["being creative is a passion of mine too", "Colors, lines, expression...", "It's a rewarding hobby"]
+			},
+			"eating": {
+				"replies": ["NOM NOM NOM", "I can count eating as a hobby, sure..."]
 			}
 		}
 	},
 	"9": {
 		"name": "ending",
-		"question": ["Look, I hate to do this", "But I have to run", "Sorry we couldn't chat even more, but it was a pleasure.", "You can follow me on <a href=\"http://twitter.com/jordanstaniscia\">Twitter</a> if you want to chat more", "See ya!"],
+		"question": ["Look, I hate to do this", "But I have to run", "Sorry we couldn't chat even more, but it was a pleasure.", "You can follow me on <a href=\"https://twitter.com/jordanstaniscia\">Twitter</a> if you want to hear more musings", "Or <a href=\"https://jor.dance/contact.html\">get in touch</a> if you want to chat about something else", "It's been a pleasure!", "See ya!"],
 		"ending": true
 	}
 }
