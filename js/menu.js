@@ -7,6 +7,12 @@ var menuString = `
         Home
       </a>
     </li>
+    <li id="work">
+      <a href="work.html">
+        <svg xmlns="http://www.w3.org/2000/svg" data-name="triangle" viewBox="0 0 24 24"></defs><title>triangle</title><g data-name="Icon/Triangle"><path class="triangle" fill-rule="evenodd" clip-rule="evenodd" d="M10.2995 3.74701C11.0814 2.48396 12.9187 2.48396 13.7006 3.74701L23.1103 18.9473C23.9351 20.2797 22.9767 22 21.4097 22H2.59033C1.02331 22 0.0649925 20.2797 0.8898 18.9473L10.2995 3.74701Z"></g></svg>
+        Work
+      </a>
+    </li>
     <li id="about" class="active">
       <a href="about.html">
         <svg xmlns="http://www.w3.org/2000/svg" data-name="square" viewBox="0 0 24 24"><title>square</title><g data-name="Icon/Square"><path class="square" d="M2 4C2 2.89543 2.89543 2 4 2H20C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V4Z"></g></svg>
