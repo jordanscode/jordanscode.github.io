@@ -9,13 +9,13 @@ var menuString = `
     </li>
     <li id="about" class="active">
       <a href="about.html">
-        <svg xmlns="http://www.w3.org/2000/svg" data-name="square" viewBox="0 0 24 24"><title>square</title><g data-name="Icon/Square"><rect class="square" x="2" y="2" width="20" height="20"/></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" data-name="square" viewBox="0 0 24 24"><title>square</title><g data-name="Icon/Square"><path class="square" d="M2 4C2 2.89543 2.89543 2 4 2H20C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V4Z"></g></svg>
         About
       </a>
     </li>
     <li id="contact">
       <a href="contact.html">
-        <svg xmlns="http://www.w3.org/2000/svg" data-name="triangle" viewBox="0 0 24 24"></defs><title>triangle</title><g data-name="Icon/Triangle"><polygon class="triangle" points="12 2 24 22 0 22 12 2"/></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" data-name="half-circle" viewBox="0 0 24 24"></defs><title>half circle</title><g data-name="Icon/halfcircle"><path class="half-circle" d="M20.144 1.31703C24.4366 6.81523 24.8949 14.6616 19.8891 19.6673C14.8834 24.6731 7.03706 24.2148 1.53885 19.9222C0.668207 19.2424 0.674428 17.9646 1.45548 17.1835L17.4053 1.23365C18.1864 0.452604 19.4642 0.446381 20.144 1.31703Z"></g></svg>
         Contact
       </a>
     </li>

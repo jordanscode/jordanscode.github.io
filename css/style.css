@@ -62,12 +62,12 @@ a:active {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 24px;
 	font-weight: 500;
-	line-height: 36px;
+	line-height: 32px;
 	border-radius: 32px;
 	padding: 14px 28px;
 	display: inline-block;
 	margin: 0 0 14px 0;
-	box-shadow: 0 1px 16px 0 rgba(0,0,0,0.12);
+	box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
 }
 
 .message-left {
@@ -93,7 +93,7 @@ a:active {
 	padding: 0 8px;
 	display: block;
 	background-color: #fff;
-	box-shadow: 0 1px 16px 0 rgba(0,0,0,0.12);
+	box-shadow: 0 1px 20px 0 rgba(0,0,0,.1);
 	position: fixed;
 	z-index: 3;
 	bottom: 0;
@@ -149,6 +149,7 @@ a:active {
 .square{fill:#f23b55;}
 .circle{fill:#009de6;}
 .triangle{fill:#ffd200;}
+.half-circle{fill:#00A839;}
 
 .content-container {
 	position: relative;
@@ -158,7 +159,7 @@ a:active {
 	width: 100%;
 	max-width: 720px;
 	height: auto;
-	border-radius: 3px;
+	border-radius: 9px;
 	margin-bottom: 32px;
 }
 
@@ -207,22 +208,31 @@ a:active {
 	text-decoration: underline;
 }
 
-.content-container a.big-link {
+a.big-link,
+a.card-link {
 	font-size: 24px;
-	line-height: 36px;
-	border-radius: 32px;
-	padding: 14px 28px;
-	border: 2px solid #E3E2DF;
-	display: inline-block;
-	margin-bottom: 14px;
+	line-height: 32px;
+	border-radius: 16px;
 	text-decoration: none;
+	font-weight: 600;
+	background-color: #fff;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+	transition: box-shadow 0.15s, transform 0.05s;
+}
+a.big-link:hover,
+a.card-link:hover {
+	box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
+}
+.big-link:active,
+a.card-link:active {
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
+	transform: matrix(0.96, 0, 0, 0.96, 0, 0);
 }
 
-.content-container a.big-link:hover {
-	border-color: #3F74B0;
-}
-.content-container a.big-link:active {
-	background-color: #efefef;
+a.big-link {
+	display: block;
+	padding: 24px;
+	margin-bottom: 16px;
 }
 
 a.breadcrumb {
@@ -244,18 +254,10 @@ a.breadcrumb:before {
 
 a.card-link {
 	justify-self: stretch;
-	font-size: 24px;
-	line-height: 32px;
-	border-radius: 9px;
 	display: inline-block;
 	margin: 0;
-	text-decoration: none;
-	font-weight: 600;
 	color: #32333E;
 	min-height: 268px;
-	background-color: #fff;
-	box-shadow: 0 1px 8px 0 rgba(0,0,0,0.1);
-	transition: box-shadow 0.15s, transform 0.05s;
 	}
 	a.card-link img {
 		width: 100%;
@@ -268,14 +270,6 @@ a.card-link {
 		padding: 0 24px 24px 24px;
     display: block;
 	}
-
-a.card-link:hover {
-	box-shadow: 0 2px 16px 0 rgba(0,0,0,0.2);
-}
-a.card-link:active {
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
-	transform: matrix(0.96, 0, 0, 0.96, 0, 0);
-}
 
 .content-container i {
 	font-style: italic;
@@ -324,36 +318,33 @@ a.card-link:active {
 	}
 
 	.content-container h1 {
-		font-size: 24px;
-		line-height: 32px;
+		font-size: 44px;
+    line-height: 48px;
 		margin-bottom: 24px;
 	}
-
+/*
 	.content-container h2 {
 		font-size: 24px;
 		line-height: 32px;
 		margin-bottom: 24px;
-	}
+	}*/
 
 	.content-container p {
 		font-size: 18px;
-		line-height: 28px;
+		line-height: 24px;
 		margin-bottom: 24px;
-		font-weight: 500;
 	}
-	.content-container a.big-link {
-		font-size: 17px;
-		line-height: 20px;
-		border-radius: 18px;
-		padding: 8px 12px;
+	a.big-link {
+		font-size: 24px;
+		line-height: 28px;
 	}
 	.message {
 		font-size: 17px;
-		line-height: 20px;
-		border-radius: 18px;
-		padding: 8px 12px;
+		line-height: 21px;
+		border-radius: 26px;
+		padding: 16px 20px;
 		display: inline-block;
-		margin: 0 0 6px 0;
+		margin: 0 0 8px 0;
 	}
 
 	#menu {
@@ -375,7 +366,7 @@ a.card-link:active {
 
 	#menu ul li {
 		float: left;
-		width: 33.3%;
+		width: 25%;
 	}
 
 	#menu ul li a {
@@ -406,14 +397,18 @@ a.card-link:active {
 }
 
 @media screen and (max-width: 640px){
+	a.big-link {
+		font-size: 18px;
+		line-height: 20px;
+		padding: 16px;
+	}
+
 	.card-link-container {
 		grid-template-columns: auto;
 	}
 
 	a.card-link {
 		min-height: 0;
-		font-size: 17px;
-		line-height: 20px;
 	}
 
 	a.card-link span {
@@ -428,4 +423,14 @@ a.card-link:active {
 	#about-container h1 {
 		padding-top: 268px;
 	}
+}
+
+.marginBottom0,
+.content-container .marginBottom0 {
+	margin-bottom: 0;
+}
+
+.marginBottom8,
+.content-container .marginBottom8 {
+	margin-bottom: 8px;
 }
