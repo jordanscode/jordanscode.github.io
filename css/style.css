@@ -173,6 +173,16 @@ a:active {
 	width: auto;
 }
 
+.content-container img.full-width {
+	left: 50%;
+	margin-left: -30vw;
+	margin-right: -30vw;
+	max-width: 60vw;
+	position: relative;
+	right: 50%;
+	width: 60vw;
+}
+
 .content-container  h1 {
 	font-size: 48px;
 	line-height: 64px;
@@ -298,6 +308,14 @@ a.card-link {
 		width: auto;
 		border-radius: 2px 0 0 2px
 	}
+
+	.content-container img.full-width {
+		width: 100%;
+    max-width: 720px;
+		position: inherit;
+		margin: 0;
+	}
+
 	#about-container h1 {
 		padding-top: 490px;
 	}
