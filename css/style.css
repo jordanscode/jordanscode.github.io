@@ -58,35 +58,49 @@ a:active {
 	width: 100%;
 }
 
-.message {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 24px;
-	font-weight: 500;
-	line-height: 32px;
-	border-radius: 32px;
-	padding: 14px 28px;
-	display: inline-block;
-	margin: 0 0 14px 0;
-	box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+/* Type */
+.h1 {
+	font-size: 48px;
+	line-height: 64px;
+	font-weight: bold;
+	letter-spacing: 0.0037em;
 }
 
-.message-left {
-	color: #393939;
-	background-color: #fff;
+.h2 {
+	font-size: 36px;
+	line-height: 48px;
+	font-weight: bold;
+	letter-spacing: 0.0039em;
 }
 
-.message-right {
-	color: #fff;
-	background-color: #00B0FF;
-	border: none;
-	outline: 0;
-	float: right;
+.h3 {
+	font-size: 28px;
+	line-height: 36px;
+	font-weight: bold;
+	letter-spacing: 0.0038em;
 }
 
-::-webkit-input-placeholder {
-	color: #80D8FF;
+.h4 {
 }
 
+/* Type Colors */
+.colorDefault {color: #212121;}
+.colorSecondary {color: #424242;}
+.colorCaption {color: #616161;}
+
+/* Weights */
+.weightRegular {font-weight: 400;}
+.weightMedium {font-weight: 500;}
+.weightSemibold {font-weight: 600;}
+.weightBold {font-weight: 700;}
+
+/* Margins */
+.marginBottom0 {margin-bottom: 0;}
+.marginBottom8 {margin-bottom: 8px;}
+.marginBottom16 {margin-bottom: 16px;}
+.marginBottom24 {margin-bottom: 24px;}
+
+/* Navigational Menu */
 #menu {
 	height: 100%;
 	width: 224px;
@@ -151,6 +165,37 @@ a:active {
 .triangle{fill:#ffd200;}
 .half-circle{fill:#00A839;}
 
+/* Chat app */
+.message {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 32px;
+	border-radius: 32px;
+	padding: 14px 28px;
+	display: inline-block;
+	margin: 0 0 14px 0;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+}
+
+.message-left {
+	color: #393939;
+	background-color: #fff;
+}
+
+.message-right {
+	color: #fff;
+	background-color: #00B0FF;
+	border: none;
+	outline: 0;
+	float: right;
+}
+
+::-webkit-input-placeholder {
+	color: #80D8FF;
+}
+
+/* Content */
 .content-container {
 	position: relative;
 }
@@ -161,16 +206,6 @@ a:active {
 	height: auto;
 	border-radius: 9px;
 	margin-bottom: 32px;
-}
-
-#about-container img.hero {
-	width: 90%;
-	margin: 0 auto;
-	position: absolute;
-	left: 140px;
-	z-index: -1;
-	max-height: 900px;
-	width: auto;
 }
 
 .content-container img.full-width {
@@ -184,26 +219,6 @@ a:active {
 	margin-bottom: 24px;
 }
 
-.content-container  h1 {
-	font-size: 48px;
-	line-height: 64px;
-	font-weight: bold;
-	color: #393939;
-	margin-bottom: 32px;
-}
-
-#about-container h1 {
-	padding-top: 690px;
-}
-
-.content-container h2 {
-	font-size: 36px;
-	line-height: 48px;
-	font-weight: bold;
-	color: #393939;
-	margin-bottom: 24px;
-}
-
 .content-container p {
 	font-size: 24px;
 	line-height: 32px;
@@ -214,13 +229,22 @@ a:active {
 .content-container p a {
 	text-decoration: none;
 }
+	.content-container p a:hover {
+		text-decoration: underline;
+	}
 
-.content-container p a:hover {
-	text-decoration: underline;
+.content-container i {
+	font-style: italic;
 }
 
+.content-container .section {
+	margin-bottom: 48px;
+}
+
+/* Links */
 a.big-link,
-a.card-link {
+a.card-link,
+a.work-card {
 	font-size: 24px;
 	line-height: 32px;
 	border-radius: 16px;
@@ -231,13 +255,32 @@ a.card-link {
 	transition: box-shadow 0.15s, transform 0.05s;
 }
 a.big-link:hover,
-a.card-link:hover {
+a.card-link:hover,
+a.work-card:hover {
 	box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
 }
 .big-link:active,
-a.card-link:active {
+a.card-link:active,
+a.work-card:active {
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
 	transform: matrix(0.96, 0, 0, 0.96, 0, 0);
+}
+
+a.big-link.disabled,
+a.card-link.disabled,
+a.work-card.disabled {
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+}
+a.big-link.disabled:hover,
+a.card-link.disabled:hover,
+a.work-card.disabled:hover {
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+}
+a.big-link.disabled:active,
+a.card-link.disabled:active,
+a.work-card.disabled:active {
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+	transform: none;
 }
 
 a.big-link {
@@ -253,6 +296,21 @@ a.breadcrumb {
 
 a.breadcrumb:before {
 	/*content: url("data:image/svg+xml; utf8, <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M4.59503 13.1791C3.37703 12.391 3.37704 10.609 4.59503 9.82086L15.9135 2.49715C17.2442 1.63609 19 2.59128 19 4.17629L19 18.8237C19 20.4087 17.2442 21.3639 15.9135 20.5029L4.59503 13.1791Z\" fill=\"#009DE6\"/></svg>)";*/
+}
+
+/* About Page */
+#about-container h1 {
+	padding-top: 690px;
+}
+
+#about-container img.hero {
+	width: 90%;
+	margin: 0 auto;
+	position: absolute;
+	left: 140px;
+	z-index: -1;
+	max-height: 900px;
+	width: auto;
 }
 
 .card-link-container {
@@ -282,14 +340,55 @@ a.card-link {
     display: block;
 	}
 
-.content-container i {
-	font-style: italic;
+/* Work page */
+.app-icon {
+	width: 72px;
+	height: 72px;
+	border-radius: 16px;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+	margin-bottom: 12px;
 }
 
-.content-container .section {
-	margin-bottom: 48px;
+.app-icon-abstract {
+	background: url(../images/app-icon-abstract.png) center center no-repeat;
+	background-size: 72px 72px;
+}
+.app-icon-instacart {
+	background: url(../images/app-icon-instacart.png) center center no-repeat;
+	background-size: 72px 72px;
 }
 
+.work-card {
+	display: block;
+	margin: 0 0 24px 0;
+	padding: 24px;
+	position: relative;
+}
+
+.work-card small {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.work-card .coming-soon {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+	background-color: rgba(0,0,0,0.1);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	color: #424242;
+	font-size: 24px;
+	font-weight: bold;
+	margin: -24px -24px -24px -24px;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 100;
+	border-radius: 16px;
+}
+
+/* Media Queries */
 @media screen and (max-width: 1440px){
 	#about-container img.hero {
 		max-height: 600px;
@@ -443,14 +542,4 @@ a.card-link {
 	#about-container h1 {
 		padding-top: 268px;
 	}
-}
-
-.marginBottom0,
-.content-container .marginBottom0 {
-	margin-bottom: 0;
-}
-
-.marginBottom8,
-.content-container .marginBottom8 {
-	margin-bottom: 8px;
 }
