@@ -237,6 +237,10 @@ a:active {
 	font-style: italic;
 }
 
+.content-container strong {
+	font-weight: bold;
+}
+
 .content-container .section {
 	margin-bottom: 48px;
 }
