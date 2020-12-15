@@ -219,17 +219,17 @@ a:active {
 	margin-bottom: 24px;
 }
 
-.content-container p {
+.content-container p, .content-container li {
 	font-size: 24px;
 	line-height: 32px;
 	color: #747474;
 	margin-bottom: 32px;
 }
 
-.content-container p a {
+.content-container p a, , .content-container li a {
 	text-decoration: none;
 }
-	.content-container p a:hover {
+	.content-container p a:hover, , .content-container li a:hover {
 		text-decoration: underline;
 	}
 
@@ -239,10 +239,16 @@ a:active {
 
 .content-container strong {
 	font-weight: bold;
+	color: #424242;
 }
 
-.content-container .section {
-	margin-bottom: 48px;
+.content-container li {
+	list-style: square outside none;
+	margin: 0 0 16px 24px;
+}
+
+.content-container section {
+	margin-bottom: 64px;
 }
 
 /* Links */
@@ -451,7 +457,7 @@ a.card-link {
 		margin-bottom: 24px;
 	}*/
 
-	.content-container p {
+	.content-container p, .content-container li {
 		font-size: 18px;
 		line-height: 24px;
 		margin-bottom: 24px;
