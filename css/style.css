@@ -368,6 +368,11 @@ a.card-link {
 	background-size: 72px 72px;
 }
 
+.work-card-container li {
+	list-style: none outside none;
+	margin: 0;
+}
+
 .work-card {
 	display: block;
 	margin: 0 0 24px 0;
