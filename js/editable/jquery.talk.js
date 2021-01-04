@@ -42,7 +42,7 @@ var questions = {
 	"0": {
 		"name": "name",
 		"intro": true,
-		"question": ["Hi, I'm Jordan Staniscia", "I’m a product designer, advisor, urbanist, and avid reader from San Francisco, CA. Currently, I work at Abstract, building tools to help designers like myself be more transparent and communicate effectively.", "But enough about me. What’s your name?"],
+		"question": ["Hi, I'm Jordan Staniscia", "I’m a product designer, advisor, urbanist, and avid reader from San Francisco, CA. Currently, I work at You.com, building a next-gen search engine. Learn more <a href=\"https://jor.dance/about.html\">about me</a> if you're interested.", "But I want to know about you. What’s your name?"],
 		"answers": {
 			"default": {
 				"replies": ["That's a good name.", "Names are a funny thing", "It's one of the only decisions you don't make yourself"]
@@ -379,6 +379,12 @@ var questions = {
 			},
 			"tokyo": {
 				"replies": ["Tokyo is so much fun!", "I can't wait to get lost there again"]
+			},
+			"kyoto": {
+				"replies": ["I enjoyed a trip to Kyoto a few years ago!", "I can't wait to go back."]
+			},
+			"osaka": {
+				"replies": ["Don't tell the other cities but I think Osaka has the best food on earth.", "I am excited to go back!"]
 			},
 			"sao paulo": {
 				"replies": ["It's fun to speak with people from so far away", "Have you been to Hopi Hari?"]
