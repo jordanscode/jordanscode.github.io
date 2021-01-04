@@ -88,6 +88,10 @@ a:active {
 .colorSecondary {color: #424242;}
 .colorCaption {color: #616161;}
 
+.colorDefaultDark {color: #fff;}
+.colorSecondaryDark {color: #E0E0E0;}
+.colorCaptionDark {color: #C4C4C4;}
+
 /* Weights */
 .weightRegular {font-weight: 400;}
 .weightMedium {font-weight: 500;}
@@ -300,12 +304,44 @@ a.big-link {
 }
 
 a.breadcrumb {
+	display: inline-block;
+	border-radius: 32px;
+	transition: background-color 0.25s, color 0.25s;
+	text-decoration: none;
+
 	font-size: 20px;
-	font-weight: 400;
+	line-height: 56px;
+	text-align: left;
+	font-weight: 600;
+	height: 56px;
+	margin: 0 0 24px 0;
+	padding-right: 24px;
+}
+a.breadcrumb:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+a.breadcrumb:active {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.1);
+	transform: matrix(0.96, 0, 0, 0.96, 0, 0);
 }
 
-a.breadcrumb:before {
-	/*content: url("data:image/svg+xml; utf8, <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M4.59503 13.1791C3.37703 12.391 3.37704 10.609 4.59503 9.82086L15.9135 2.49715C17.2442 1.63609 19 2.59128 19 4.17629L19 18.8237C19 20.4087 17.2442 21.3639 15.9135 20.5029L4.59503 13.1791Z\" fill=\"#009DE6\"/></svg>)";*/
+a.breadcrumb svg {
+	width: 24px;
+	height: 24px;
+	fill: #009DE6;
+	margin: 16px 16px 16px 0;
+	float: left;
+	transition: margin 0.25s;
+}
+a.breadcrumb:hover svg {
+	margin-left: 16px;
+	fill: #3F74B0;
+}
+a.breadcrumb:active svg {
+	margin-left: 16px;
+	fill: #2D527D;
 }
 
 /* About Page */
