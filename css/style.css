@@ -226,7 +226,7 @@ a:active {
 .content-container p, .content-container li {
 	font-size: 24px;
 	line-height: 32px;
-	color: #747474;
+	color: #616161;
 	margin-bottom: 32px;
 }
 
@@ -496,7 +496,7 @@ img + .work-card-inner {
 
 @media screen and (max-width: 960px){
 	.container {
-		padding: 0 30px;
+		padding: 0 24px;
 	}
 
 	#about-container img.hero {
@@ -513,12 +513,12 @@ img + .work-card-inner {
     line-height: 48px;
 		margin-bottom: 24px;
 	}
-/*
+
 	.content-container h2 {
 		font-size: 24px;
 		line-height: 32px;
 		margin-bottom: 24px;
-	}*/
+	}
 
 	.content-container p, .content-container li {
 		font-size: 18px;
