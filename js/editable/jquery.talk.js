@@ -54,7 +54,7 @@ var questions = {
 				"replies": ["A solid name, I must say", "Computers can't lie y'know..."]
 			},
 			"sarah li": {
-				"replies": ["Hey Bae", "Want to go on another trip somewhere?", "The last few trips we've taken were so much fun!"]
+				"replies": ["Hey Manushkaaaa", "Put down the stamps!"]
 			},
 			"sarah": {
 				"replies": ["Good name", "That's also my significant other's name"]
@@ -65,7 +65,7 @@ var questions = {
 			"cj": {
 				"replies": ["Sweet name", "YUMUNSIMINIOR!"]
 			},
-					"demi": {
+			"demi": {
 				"replies": ["Hey, Demi!", "I'm eating airhead extremes while writing this", "\"sugar\" is all over my keyboard"]
 			},
 			"carlos|carlos solares": {
@@ -349,6 +349,9 @@ var questions = {
 			},
 			"paris": {
 				"replies": ["\"Soup DeJour\" is about the extent of my French"]
+			},
+			"austin": {
+				"replies": ["Can you do me a favor and ship me some BBQ?", "Thanks..."]
 			},
 			"brooklyn": {
 				"replies": ["Home of chya'boy!", "Uhhhhhh", "It's Jay-Z...", "I'm doing an impression of Jay-Z..."]
