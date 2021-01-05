@@ -81,6 +81,9 @@ a:active {
 }
 
 .h4 {
+	font-size: 26px;
+  line-height: 32px;
+  letter-spacing: 0.0022em;
 }
 
 /* Type Colors */
@@ -508,17 +511,29 @@ img + .work-card-inner {
 		border-radius: 0 0 16px 16px;
 	}
 
-	.content-container h1 {
+	.h1 {
 		font-size: 44px;
     line-height: 48px;
-		margin-bottom: 24px;
+		letter-spacing: 0.0037em;
 	}
 
-	.content-container h2 {
-		font-size: 24px;
-		line-height: 32px;
-		margin-bottom: 24px;
+	.h2 {
+		font-size: 31px;
+	  line-height: 38px;
+	  letter-spacing: 0.0039em;
 	}
+
+	.h3 {
+    font-size: 21px;
+    line-height: 26px;
+    letter-spacing: -0.0036em;
+  }
+
+  .h4 {
+    font-size: 21px;
+    line-height: 26px;
+    letter-spacing: -0.0036em;
+  }
 
 	.content-container p, .content-container li {
 		font-size: 18px;
