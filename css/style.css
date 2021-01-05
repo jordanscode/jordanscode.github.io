@@ -331,7 +331,7 @@ a.breadcrumb svg {
 	width: 24px;
 	height: 24px;
 	fill: #009DE6;
-	margin: 16px 16px 16px 0;
+	margin: 16px 8px 16px 0;
 	float: left;
 	transition: margin 0.25s;
 }
@@ -393,6 +393,12 @@ a.card-link {
 	border-radius: 16px;
 	box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
 	margin-bottom: 12px;
+	transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.work-card:hover .app-icon {
+	transform: rotate(-7deg);
+	box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
 }
 
 .app-icon-abstract {
@@ -412,8 +418,24 @@ a.card-link {
 .work-card {
 	display: block;
 	margin: 0 0 24px 0;
-	padding: 24px;
 	position: relative;
+}
+
+.work-card img {
+	display: block;
+	margin: 0;
+	border-radius: 16px 16px 0 0;
+}
+
+.work-card-inner {
+	padding: 24px;
+}
+
+img + .work-card-inner {
+	padding: 0 24px 24px 24px;
+	margin-top: -36px;
+	position: relative;
+	z-index: 10;
 }
 
 .work-card small {
