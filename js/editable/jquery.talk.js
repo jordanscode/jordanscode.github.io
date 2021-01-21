@@ -478,6 +478,9 @@ var questions = {
 			},
 			"twitch": {
 				"replies": ["So you watch me stream?", "Be honest — how boring is it?", "Okay, maybe don't answer that one..."]
+			},
+			"you|you.com|susea": {
+				"replies": ["Well hello there, coworker!"]
 			}
 		}
 	},
@@ -528,7 +531,7 @@ var questions = {
 				"replies": ["Taking care of kids can be a thankless job", "Here's to the mothers of the world!"]
 			},
 			"recruiter|recruiting|hiring|headhunter": {
-				"replies": ["You're probably looking for the <a href=\"https://jor.dance/contact.html\">about page</a> to learn a bit more about me", "Click the about page!"]
+				"replies": ["You're probably looking for the <a href=\"https://jor.dance/about.html\">about page</a> to learn a bit more about me"]
 			}
 		}
 	},
