@@ -464,6 +464,11 @@ img + .work-card-inner {
 	border-radius: 16px;
 }
 
+.credits p, .credits h3 {
+	font-size: 18px;
+  line-height: 24px;
+}
+
 /* Media Queries */
 @media screen and (max-width: 1440px){
 	#about-container img.hero {
