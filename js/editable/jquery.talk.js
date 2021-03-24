@@ -42,7 +42,7 @@ var questions = {
 	"0": {
 		"name": "name",
 		"intro": true,
-		"question": ["Hi, I'm Jordan Staniscia", "I’m a product designer, advisor, urbanist, and avid reader from San Francisco, CA. Currently, I work at You.com, building a next-gen search engine. Learn more <a href=\"https://jor.dance/about.html\">about me</a> if you're interested.", "But I want to know about you. What’s your name?"],
+		"question": ["Hi, I'm Jordan Staniscia", "I’m a product designer, advisor, urbanist, and avid reader from San Francisco, CA. Currently, I work at Stripe building better payment experiences. Learn more <a href=\"https://jor.dance/about.html\">about me</a> if you're interested.", "But I want to know about you. What’s your name?"],
 		"answers": {
 			"default": {
 				"replies": ["That's a good name.", "Names are a funny thing", "It's one of the only decisions you don't make yourself"]
@@ -480,6 +480,9 @@ var questions = {
 				"replies": ["So you watch me stream?", "Be honest — how boring is it?", "Okay, maybe don't answer that one..."]
 			},
 			"you|you.com|susea": {
+				"replies": ["Are you SEARCHING for a response from this chat?"]
+			},
+			"stripe": {
 				"replies": ["Well hello there, coworker!"]
 			}
 		}
