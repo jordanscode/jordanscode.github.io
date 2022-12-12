@@ -711,7 +711,7 @@ var questions = {
 	},
 	"9": {
 		"name": "ending",
-		"question": ["Look, I hate to do this", "But I have to run", "Sorry we couldn't chat even more, but it was a pleasure.", "You can follow me on <a href=\"https://twitter.com/jordanstaniscia\">Twitter</a> if you want to hear more musings", "Or <a href=\"https://jor.dance/contact.html\">get in touch</a> if you want to chat about something else", "It's been a pleasure!", "See ya!"],
+		"question": ["Look, I hate to do this", "But I have to run", "Sorry we couldn't chat even more, but it was a pleasure.", "You can follow me on <a href=\"https://mastodon.social/@jordance">Mastodon</a> if you want to hear more musings", "Or <a href=\"https://jor.dance/contact.html\">get in touch</a> if you want to chat about something else", "It's been a pleasure!", "See ya!"],
 		"ending": true
 	}
 }
