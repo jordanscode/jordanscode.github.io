@@ -412,6 +412,14 @@ a.card-link {
 	background: url(../images/app-icon-instacart.png) center center no-repeat;
 	background-size: 72px 72px;
 }
+.app-icon-stripe {
+	background: url(../images/app-icon-stripe.png) center center no-repeat;
+	background-size: 72px 72px;
+}
+.app-icon-storify {
+	background: url(../images/app-icon-storify.png) center center no-repeat;
+	background-size: 72px 72px;
+}
 
 .work-card-container li {
 	list-style: none outside none;
