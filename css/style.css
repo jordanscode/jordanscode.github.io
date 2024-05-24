@@ -215,7 +215,8 @@ a:active {
 	margin-bottom: 32px;
 }
 
-.content-container img.full-width {
+.content-container img.full-width, 
+.content-container iframe {
 	left: 50%;
 	margin-left: -30vw;
 	margin-right: -30vw;
@@ -226,7 +227,8 @@ a:active {
 	margin-bottom: 24px;
 }
 
-.content-container p, .content-container li {
+.content-container p, 
+.content-container li {
 	font-size: 24px;
 	line-height: 32px;
 	color: #616161;
@@ -498,7 +500,8 @@ img + .work-card-inner {
 		border-radius: 0 0 16px 16px;
 	}
 
-	.content-container img.full-width {
+	.content-container img.full-width,
+	.content-container iframe {
 		width: 100%;
     max-width: 720px;
 		position: inherit;
