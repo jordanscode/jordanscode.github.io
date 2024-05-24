@@ -117,7 +117,7 @@ var questions = {
 				"replies": ["What's up, Max?", "Want to go back to Berkeley soon?"]
 			},
 			"max": {
-				"replies": ["I know a few people named Max", "Are you tall?", "Do you have brownish/reddish hair?", "If so, we haven't narrowed it down at all"]
+				"replies": ["You'll probably appreciate this text is above the fold."]
 			},
 			"min": {
 				"replies": ["Shortest intro ever is definitely \"Min iOS\"", "Let's build more cool shit, ok?"]
@@ -195,7 +195,7 @@ var questions = {
 				"replies": ["I have a good family friend named Charlie", "He's a sports almanac!"]
 			},
 			"matias duarte": {
-				"replies": ["I'm a huge fan!", "webOS was my jam", "And Material Design...", "Lovin' it"]
+				"replies": ["I'm a huge fan!", "webOS was my jam"]
 			},
 			"immad": {
 				"replies": ["I worked with an Immad a few years back", "He's ruthless at board games!"]
@@ -231,7 +231,7 @@ var questions = {
 				"replies": ["That's my grandmother's name", "She's a great cook"]
 			},
 			"arlene": {
-				"replies": ["That's my grandmother's name", "She's really cool", "She used to play Super Nintendo with us as kids"]
+				"replies": ["That's my grandmother's name", "She's really cool", "She likes to play Super Nintendo"]
 			},
 			"don": {
 				"replies": ["Don, is that you?", "What is happiness?", "It's a moment before you need more happiness"]
@@ -322,6 +322,27 @@ var questions = {
 			},
 			"tim": {
 				"replies": ["Is it really you, Tim?", "Or is it...", "MAXVOLTAR?"]
+			},
+			"sean": {
+				"replies": ["Birds soon?"]
+			},
+			"tyler": {
+				"replies": ["This site is probably taking you out of your ELEMENT.", "Get it?"]
+			},
+			"dave": {
+				"replies": ["Sup, dad."]
+			},
+			"perry": {
+				"replies": ["Bernal for life!"]
+			},
+			"nicole": {
+				"replies": ["Hey! Let's figure out the correct location to take an Uber to next time, OK?"]
+			},
+			"cynthia": {
+				"replies": ["I don't have any notion of what you expect me to say here...", "Get it?"]
+			},
+			"kunal": {
+				"replies": ["HANG IN THERE!"]
 			}
 		}
 	},
