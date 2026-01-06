@@ -84,11 +84,9 @@ a:active {
 /* Type Colors */
 .colorDefault {color: #353A44;}
 .colorSecondary {color: #727F99;}
-.colorCaption {color: #727F99;}
 
 .colorDefaultDark {color: #fff;}
 .colorSecondaryDark {color: #E0E0E0;}
-.colorCaptionDark {color: #C4C4C4;}
 
 .colorRedText{color:#dc354d;}
 .colorBlueText{fill:#007db7;}
@@ -388,7 +386,6 @@ img + .work-card-inner {
     .h2 {
         font-size: 31px;
 	    line-height: 38px;
-		letter-spacing: 0.0039em;
     }
 }
 
@@ -415,16 +412,19 @@ img + .work-card-inner {
         height: 94vh;
     }
 
+    .titleLockup {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
 	.h1 {
 		font-size: 44px;
         line-height: 48px;
-		letter-spacing: 0.0037em;
 	}
 
 	.h2 {
         font-size: 31px;
         line-height: 38px;
-        letter-spacing: 0.0039em;
     }
 
 	.h3 {
@@ -435,7 +435,6 @@ img + .work-card-inner {
     .h4 {
         font-size: 21px;
         line-height: 26px;
-        letter-spacing: -0.0036em;
     }
 
 	#menu {
@@ -491,26 +490,19 @@ img + .work-card-inner {
     }
 
     .articlesGrid {
+        display: block;
         grid-template-columns: 1fr;
     }
 
     .articleCard {
-        height: 152px;
-    }
-
-    .articleCard .h3 {
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* Number of lines */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        display: block;
+        height: auto;
+        margin-bottom: 16px;
     }
 
     .articleImage {
-        float: left;
-        margin-right: 24px;
-        max-height: 100%;
-        width: auto;
-        height: auto;
+        float: right;
+        margin-left: 24px;
     }
 
     .articleMeta {
@@ -519,4 +511,43 @@ img + .work-card-inner {
         margin-top: 12px;
     }
 
+}
+
+@media screen and (max-width: 480px){
+    .h1 {
+		font-size: 38px;
+        line-height: 44px;
+	}
+
+	.h2 {
+	    font-size: 20px;
+        line-height: 26px;
+    }
+
+	.h3 {
+        font-size: 18px;
+        line-height: 24px;
+       }
+
+    .h4 {
+        font-size: 21px;
+        line-height: 26px;
+    }
+
+    .footerLine {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .footerLine a, .footerLine a:visited {
+        color: #727F99;
+    }
+
+    .footerLine.marginBottom0 {
+        margin-bottom: 0;
+    }
+
+    .footerEmbelishment {
+        display: none;
+    }
 }
