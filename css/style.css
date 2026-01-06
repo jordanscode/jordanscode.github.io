@@ -497,6 +497,7 @@ img + .work-card-inner {
     .articleCard {
         display: block;
         height: auto;
+        min-height: 128px;
         margin-bottom: 16px;
     }
 
