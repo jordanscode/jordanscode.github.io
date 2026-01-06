@@ -480,6 +480,10 @@ img + .work-card-inner {
 	#menu ul li a:hover svg {
 		margin-left: 16px;
 	}
+
+	#menu ul li a.back {
+	    display: none;
+	}
 }
 
 @media screen and (max-width: 640px){
