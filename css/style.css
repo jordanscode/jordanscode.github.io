@@ -210,13 +210,15 @@ a:active {
 }
 
 .contentBox {
-    padding: 64px;
+    padding-top: 64px;
+    padding-bottom: 64px;
     margin: 16px;
     position: relative;
 }
 
 .contentBox.gray {
     border-radius: 16px;
+    padding: 64px;
     background-color: #FAFAFB;
 }
 
@@ -233,6 +235,11 @@ a:active {
     left: 64px;
 }
 
+.titleLockup {
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
 /* Writing */
 .articlesGrid {
     display: grid;
@@ -245,8 +252,8 @@ a:active {
     border-radius: 16px;
     transition: transform 0.2s;
     cursor: pointer;
-    padding: 24px;
-    height: 320px;
+    padding: 48px;
+    height: 368px;
     position: relative;
     text-decoration: none;
 }
@@ -273,7 +280,7 @@ a:active {
     align-items: center;
     gap: 8px;
     position: absolute;
-    bottom: 24px;
+    bottom: 48px;
 }
 
 .authorAvatar {
@@ -399,6 +406,10 @@ img + .work-card-inner {
         padding: 24px;
     }
 
+    .contentBox.gray {
+        padding: 24px;
+    }
+
     #work.contentBox, #writing.contentBox {
         padding: 0;
     }
@@ -413,8 +424,8 @@ img + .work-card-inner {
     }
 
     .titleLockup {
-        margin-left: 24px;
-        margin-right: 24px;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
 	.h1 {
@@ -484,6 +495,11 @@ img + .work-card-inner {
 	#menu ul li a.back {
 	    display: none;
 	}
+
+	.articleCard {
+	    padding: 24px;
+		height: 320px;
+    }
 }
 
 @media screen and (max-width: 640px){
