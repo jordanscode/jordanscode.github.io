@@ -394,6 +394,7 @@ a:active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-size: 128px 128px;
 }
 
 /*.app-icon:hover {
@@ -406,25 +407,20 @@ a:active {
 .item-full.misc         {background: #FAFAFB;}
 
 .abstract .app-icon {
-	background: url(../images/work/app-icon/app-icon-abstract.png) center center no-repeat;
-	background-size: 128px 128px;
+	background-image: url(../images/work/app-icon/app-icon-abstract.png);
 	border-radius: 16px;
 }
 .instacart .app-icon {
-	background: url(../images/work/app-icon/app-icon-instacart.svg) center center no-repeat;
-	background-size: 128px 128px;
+	background-image: url(../images/work/app-icon/app-icon-instacart.svg);
 }
 .stripe .app-icon {
-	background: url(../images/work/app-icon/app-icon-stripe.svg) center center no-repeat;
-	background-size: 128px 128px;
+	background-image: url(../images/work/app-icon/app-icon-stripe.svg);
 }
 .storify .app-icon {
-	background: url(../images/work/app-icon/app-icon-storify.png) center center no-repeat;
-	background-size: 128px 128px;
+	background-image: url(../images/work/app-icon/app-icon-storify.png);
 }
 .misc .app-icon {
-	background: url(../images/work/app-icon/app-icon-more.svg) center center no-repeat;
-	background-size: 128px 128px;
+	background-image: url(../images/work/app-icon/app-icon-more.svg);
 }
 
 .credits p, .credits h3 {
@@ -590,6 +586,17 @@ a:active {
 
     .item-full, .item-2col, .item-4col {
         height: 300px;
+    }
+
+    .portfolio-item .metadata {
+        top: 24px;
+        left: 24px;
+    }
+
+    .app-icon {
+        height: 96px;
+        width: 96px;
+        background-size: 96px 96px;
     }
 
 }
