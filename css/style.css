@@ -319,7 +319,6 @@ a:active {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    cursor: pointer;
     transition: transform 0.2s ease;
 }
 
