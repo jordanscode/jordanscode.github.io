@@ -296,87 +296,135 @@ a:active {
     background-size: 24px 24px;
 }
 
-/* Work page */
+/* Work */
+.grid-row {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-full {
+    grid-template-columns: 1fr;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.portfolio-item:hover {
+    /*transform: translateY(-4px);*/
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item .metadata {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 48px;
+    left: 48px;
+}
+
+.item-full {
+    height: 500px;
+}
+
+.item-2col {
+    height: 400px;
+    background: #1a1a1a;
+}
+
+.item-2col img {
+    filter: brightness(0.85);
+}
+
+.item-4col {
+    height: 300px;
+    background: #1a1a1a;
+}
+
+.item-4col img {
+    filter: brightness(0.8);
+}
+
+.item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/*.portfolio-item:hover .item-content {
+    opacity: 1;
+}*/
+
+.item-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
 .app-icon {
-	width: 72px;
-	height: 72px;
-	border-radius: 16px;
-	box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
-	margin-bottom: 12px;
-	transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.work-card:hover .app-icon {
-	transform: rotate(-7deg);
-	box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
-}
-
-.app-icon-abstract {
-	background: url(../images/app-icon-abstract.png) center center no-repeat;
-	background-size: 72px 72px;
-}
-.app-icon-instacart {
-	background: url(../images/app-icon-instacart.png) center center no-repeat;
-	background-size: 72px 72px;
-}
-.app-icon-stripe {
-	background: url(../images/app-icon-stripe.png) center center no-repeat;
-	background-size: 72px 72px;
-}
-.app-icon-storify {
-	background: url(../images/app-icon-storify.png) center center no-repeat;
-	background-size: 72px 72px;
-}
-
-.work-card-container li {
-	list-style: none outside none;
-	margin: 0;
-}
-
-.work-card {
-	display: block;
-	margin: 0 0 24px 0;
-	position: relative;
-}
-
-.work-card img {
-	display: block;
-	margin: 0;
-	border-radius: 16px 16px 0 0;
-}
-
-.work-card-inner {
-	padding: 24px;
-}
-
-img + .work-card-inner {
-	padding: 0 24px 24px 24px;
-	margin-top: -36px;
-	position: relative;
-	z-index: 10;
-}
-
-.work-card small {
-	font-size: 14px;
-	line-height: 18px;
-}
-
-.work-card .coming-soon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: rgba(0,0,0,0.1);
-	-webkit-backdrop-filter: blur(8px);
-	backdrop-filter: blur(8px);
-	color: #424242;
-	font-size: 24px;
-	font-weight: bold;
-	margin: -24px -24px -24px -24px;
-	height: 100%;
-	width: 100%;
+	width: 128px;
+	height: 128px;
+	transition: rotate 0.25s;
 	position: absolute;
-	z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*.app-icon:hover {
+	transform: rotate(-7deg);
+}*/
+
+.item-full.abstract     {background: #202222;}
+.item-full.instacart    {background: #003D29;}
+.item-full.stripe       {background: #533AFD;}
+.item-full.misc         {background: #FAFAFB;}
+
+.abstract .app-icon {
+	background: url(../images/work/app-icon/app-icon-abstract.png) center center no-repeat;
+	background-size: 128px 128px;
 	border-radius: 16px;
+}
+.instacart .app-icon {
+	background: url(../images/work/app-icon/app-icon-instacart.svg) center center no-repeat;
+	background-size: 128px 128px;
+}
+.stripe .app-icon {
+	background: url(../images/work/app-icon/app-icon-stripe.svg) center center no-repeat;
+	background-size: 128px 128px;
+}
+.storify .app-icon {
+	background: url(../images/work/app-icon/app-icon-storify.png) center center no-repeat;
+	background-size: 128px 128px;
+}
+.misc .app-icon {
+	background: url(../images/work/app-icon/app-icon-more.svg) center center no-repeat;
+	background-size: 128px 128px;
 }
 
 .credits p, .credits h3 {
@@ -500,6 +548,10 @@ img + .work-card-inner {
 	    padding: 24px;
 		height: 320px;
     }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 640px){
@@ -530,6 +582,14 @@ img + .work-card-inner {
         position: relative;
         bottom: auto;
         margin-top: 12px;
+    }
+
+    .grid-2, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .item-full, .item-2col, .item-4col {
+        height: 300px;
     }
 
 }
