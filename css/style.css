@@ -667,12 +667,26 @@ a:active {
         margin-top: 12px;
     }
 
+    .grid-row {
+        gap: 16px;
+    }
+
     .grid-2, .grid-4 {
         grid-template-columns: 1fr;
     }
 
-    .item-full, .item-2col, .item-4col {
+    .item-full {
         height: 300px;
+    }
+
+    .item-2col, .item-4col {
+        width: 100%;
+        height: auto;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
     }
 
     .portfolio-item .metadata {
