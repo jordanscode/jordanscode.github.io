@@ -25,6 +25,7 @@ var menuString = `
         <span class="menu-label">Contact</span>
       </a>
     </li>
+    <li class="menu-indicator" aria-hidden="true"></li>
   </ul>
 </div>
 `;
