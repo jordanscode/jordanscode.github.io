@@ -7,7 +7,7 @@ var menuString = `
         <span class="menu-label">About</span>
       </a>
     </li>
-    <li class="active">
+    <li>
       <a href="#work">
         <svg xmlns="http://www.w3.org/2000/svg" data-name="square" viewBox="0 0 24 24"><title>square</title><g data-name="Icon/Square"><path class="square" d="M2 4C2 2.89543 2.89543 2 4 2H20C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V4Z"></g></svg>
         <span class="menu-label">Work</span>

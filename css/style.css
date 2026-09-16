@@ -904,7 +904,7 @@ a:active {
 
 @media screen and (max-width: 960px){
     .container {
-        margin: 0 auto 72px auto;
+        margin: 0 auto 110px auto;
     }
 
     .contentBox {
@@ -915,7 +915,12 @@ a:active {
         padding: 24px;
     }
 
-    #work.contentBox, #writing.contentBox {
+    .case-study, .case-study-credits, .case-study-footer {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    #work.contentBox, #writing.contentBox, .case-study {
         padding: 0;
     }
 
@@ -966,28 +971,59 @@ a:active {
     }
 
 	#menu {
-		height: 56px;
-		padding: 0;
-		padding-bottom: env(safe-area-inset-bottom);
-		width: 100%;
+		height: auto;
+		width: auto;
+		max-width: 400px;
+		padding: 8px;
 		display: block;
 		position: fixed;
 		z-index: 3;
 		top: auto;
-		bottom: 0;
-		background-color: #fff;
+		left: 16px;
+		right: 16px;
+		bottom: calc(16px + env(safe-area-inset-bottom));
+		margin: 0 auto;
+		border-radius: 34px;
+		background-color: rgba(255, 255, 255, 0.72);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16), inset 0 1px 0 0 rgba(255,255,255,0.6);
 	}
 
 	#menu ul {
-		max-width: 720px;
-		margin: 0 auto;
+		position: relative;
+		max-width: none;
+		margin: 0;
 		padding: 0;
+		display: flex;
 	}
 
 	#menu ul li {
-		float: left;
-		width: 25%;
+		position: relative;
+		z-index: 1;
+		float: none;
+		flex: 1;
 	}
+
+	#menu ul li.menu-indicator {
+		display: block;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 25%;
+		height: 100%;
+		border-radius: 26px;
+		background-color: rgba(0, 0, 0, 0.06);
+		transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+		pointer-events: none;
+	}
+
+	#menu ul:has(li:nth-child(1).active) .menu-indicator { transform: translateX(0%); }
+	#menu ul:has(li:nth-child(2).active) .menu-indicator { transform: translateX(100%); }
+	#menu ul:has(li:nth-child(3).active) .menu-indicator { transform: translateX(200%); }
+	#menu ul:has(li:nth-child(4).active) .menu-indicator { transform: translateX(300%); }
 
 	#menu ul li a {
 		font-size: 11px;
@@ -995,18 +1031,25 @@ a:active {
 		color: #747474;
 		text-align: center;
 		font-weight: 500;
-		margin: 0 auto 12px auto;
-		display: block;
-		margin: 0 auto;
-		width: 56px;
-		height: 56px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2px;
+		margin: 0;
+		width: auto;
+		height: 52px;
+		border-radius: 26px;
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+
+	#menu ul li.active a {
+		color: #32333E;
 	}
 
 	#menu ul li a svg {
-		margin: 8px 16px 4px 16px;
-	}
-	#menu ul li a:hover svg {
-		margin-left: 16px;
+		margin: 0;
+		float: none;
 	}
 
 	#menu ul li a.back {
