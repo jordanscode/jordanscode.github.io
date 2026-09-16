@@ -88,6 +88,32 @@ a:active {
 .colorDefaultDark {color: #fff;}
 .colorSecondaryDark {color: #E0E0E0;}
 
+/* Hero intro animation */
+.hero .word {
+	display: inline-block;
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.hero .word {
+		animation: heroBlurIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+		animation-delay: calc(var(--i) * 55ms);
+	}
+}
+
+@keyframes heroBlurIn {
+	from {
+		opacity: 0;
+		filter: blur(10px);
+		transform: scale(1.03);
+	}
+	to {
+		opacity: 1;
+		filter: blur(0);
+		transform: scale(1);
+	}
+}
+
 .colorRedText{color:#dc354d;}
 .colorBlueText{fill:#007db7;}
 .colorYellowText{color:#8c7300;}
@@ -989,6 +1015,11 @@ a:active {
 		-webkit-backdrop-filter: blur(20px);
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16), inset 0 1px 0 0 rgba(255,255,255,0.6);
+		/* The pill sits a constant 16px above the safe area (both terms
+		   below include env(safe-area-inset-bottom), which cancels out),
+		   so clip the shadow's downward bleed there — Safari otherwise
+		   chops it off mid-fade wherever the home indicator happens to sit. */
+		clip-path: inset(-60px -60px -16px -60px);
 	}
 
 	#menu ul {
@@ -1041,6 +1072,12 @@ a:active {
 		height: 52px;
 		border-radius: 26px;
 		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+
+	/* The sliding .menu-indicator already shows the active tab, so the
+	   flat per-item hover background would just double up on it here. */
+	#menu ul li a:hover {
+		background-color: transparent;
 	}
 
 	#menu ul li.active a {

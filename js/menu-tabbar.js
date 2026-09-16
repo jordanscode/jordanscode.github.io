@@ -41,13 +41,18 @@
 		// sections actually live in this same document.
 		if (sections.length < 2 || !('IntersectionObserver' in window)) return false;
 
+		// A thin band dead-center in the viewport (-40%/-40%) means a fast
+		// flick can jump clean over it between samples, so a section's
+		// "entering" crossing never fires and the indicator sticks on
+		// whatever was last active. Use a much wider, top-biased zone
+		// instead, so there's far more room to catch the crossing.
 		var observer = new IntersectionObserver(function (entries) {
 			entries.forEach(function (entry) {
 				if (entry.isIntersecting) {
 					setActiveTab(tabs, entry.target.id);
 				}
 			});
-		}, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+		}, { rootMargin: '-10% 0px -50% 0px', threshold: 0 });
 
 		sections.forEach(function (section) { observer.observe(section); });
 		return true;
