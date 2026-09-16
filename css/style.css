@@ -189,6 +189,12 @@ a:active {
 	background-color: rgba(0, 0, 0, 0.06);
 }
 
+/* Only rendered/shown on mobile subpages (see the max-width: 960px rules
+   below) — hidden by default so it never appears in the desktop dock. */
+#menu .menu-back {
+	display: none;
+}
+
 #menu ul li a:active {
 	cursor: pointer;
 	background-color: rgba(0, 0, 0, 0.12);
@@ -227,6 +233,17 @@ a:active {
 		transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
+	/* Pins the icon still on hover. Only matters on chat.html, which still
+	   loads style-legacy.css for the chat bubbles — that stylesheet has its
+	   own leftover #menu ul li a:hover svg { margin-left: 24px } nudge, which
+	   would otherwise make this page's nav hover differently from every
+	   other page's. Scoped to desktop only: mobile's base svg margin is 0,
+	   not 16, so this rule leaking into that breakpoint made the icon jump
+	   on hover instead of the tab bar's usual smooth, bouncy feel. */
+	#menu ul li a:hover svg {
+		margin-left: 16px;
+	}
+
 	#menu:hover {
 		width: 248px;
 	}
@@ -251,7 +268,7 @@ a:active {
 		margin-right: 0;
 		width: 56px;
 		overflow: hidden;
-		transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s, color 0.25s;
+		transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s, color 0.25s, transform 0.15s ease;
 	}
 
 	#menu:hover ul li a {
@@ -371,6 +388,14 @@ a:active {
     position: absolute;
     top: 64px;
     left: 64px;
+}
+
+/* Same column width as .case-study (chat.html), centered in whatever
+   space is left of the desktop menu rail. */
+.chat-wrap {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .titleLockup {
@@ -950,6 +975,11 @@ a:active {
         padding: 0;
     }
 
+    /* The floating round back button in the tab bar does this job now. */
+    .case-study a.back-link {
+        display: none;
+    }
+
     .link-badge {
         width: 34px;
         height: 34px;
@@ -1022,6 +1052,58 @@ a:active {
 		clip-path: inset(-60px -60px -16px -60px);
 	}
 
+	/* Subpages have nowhere to go but back, so the whole dock collapses
+	   into a single round action hugging the bottom-left corner instead
+	   of the full-width tab bar — same glass material, no labels. */
+	#menu.is-subpage {
+		/* Explicit, not the base rule's height: auto — .menu-back below is
+		   height: 100%, which only resolves against a fixed parent height.
+		   Left auto, it collapsed to the icon's own height, squashing the
+		   circle into a flat oval. */
+		width: 68px;
+		max-width: 68px;
+		height: 68px;
+		right: auto;
+		padding: 0;
+		border-radius: 50%;
+	}
+
+	#menu.is-subpage ul {
+		display: none;
+	}
+
+	/* Sizing (border-box, site-wide) means #menu's 1px border eats into
+	   its own 68px box, leaving a 66px content area — .menu-back was
+	   hardcoded to 68px, so it overflowed past the glass edge by 1px on
+	   every side. 100% keeps it exactly inside no matter the border. */
+	#menu.is-subpage .menu-back {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		color: #747474;
+		text-decoration: none;
+	}
+
+	/* The triangle's own path sits slightly left of its viewBox center,
+	   so flexbox centering alone leaves it looking off — nudge it back. */
+	#menu.is-subpage .menu-back svg {
+		transform: translateX(-2px);
+	}
+
+	/* Unlike the tab bar's items, the button IS the whole glass container
+	   here, so pressing scales the container itself (not just the icon
+	   layer) — the whole thing pushes inward as one piece. */
+	#menu.is-subpage:active {
+		transform: matrix(0.92, 0, 0, 0.92, 0, 0);
+	}
+
+	#menu.is-subpage .menu-back:active {
+		background-color: rgba(0, 0, 0, 0.12);
+	}
+
 	#menu ul {
 		position: relative;
 		max-width: none;
@@ -1068,6 +1150,7 @@ a:active {
 		justify-content: center;
 		gap: 2px;
 		margin: 0;
+		padding: 0;
 		width: auto;
 		height: 52px;
 		border-radius: 26px;
@@ -1078,6 +1161,13 @@ a:active {
 	   flat per-item hover background would just double up on it here. */
 	#menu ul li a:hover {
 		background-color: transparent;
+	}
+
+	/* A bit more pronounced than the desktop dock's press feedback —
+	   mobile has no hover state to lean on, so the tap itself needs to
+	   read clearly. */
+	#menu ul li a:active {
+		transform: matrix(0.92, 0, 0, 0.92, 0, 0);
 	}
 
 	#menu ul li.active a {

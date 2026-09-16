@@ -32,6 +32,79 @@
 		setActiveTab(tabs, name);
 	}
 
+	function isIndexPage() {
+		return /\/(index\.html)?$/.test(window.location.pathname);
+	}
+
+	/* Case studies live one level down in /work/ and go back to the Work
+	   section; every other subpage just goes back to the top of the site. */
+	function backHref() {
+		return /\/work\//.test(window.location.pathname) ? '../index.html#work' : 'index.html';
+	}
+
+	/* On mobile, subpages don't need the full four-icon dock — there's
+	   nowhere to jump to but back. Collapse it into a single round back
+	   button in the same glass material as the tab bar, no label. */
+	function setupBackButton(menu) {
+		if (isIndexPage()) return;
+
+		menu.classList.add('is-subpage');
+
+		var back = document.createElement('a');
+		back.className = 'menu-back';
+		back.href = backHref();
+		back.setAttribute('aria-label', 'Back');
+		// Same triangle mark as the back-link at the top of a case study page.
+		// Width only, no height: lets the SVG derive it from the viewBox so
+		// the triangle keeps its native proportions instead of stretching.
+		back.innerHTML = '<svg width="18" viewBox="0 0 16 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.61697 10.1824C1.39232 9.39508 1.39232 7.60491 2.61697 6.81764L10.9185 1.48097C12.2495 0.625314 14 1.581 14 3.16333V13.8367C14 15.419 12.2495 16.3747 10.9185 15.519L2.61697 10.1824Z"/></svg>';
+
+		back.addEventListener('click', function (e) {
+			var ref = document.referrer;
+			var cameFromSite = ref && ref.indexOf(window.location.origin) === 0;
+			if (cameFromSite && window.history.length > 1) {
+				e.preventDefault();
+				window.history.back();
+			}
+		});
+
+		menu.appendChild(back);
+	}
+
+	/* Keeps the URL in sync with whichever section is on screen, so a
+	   refresh (or a shared link) lands back on the same section instead
+	   of always snapping to the top. replaceState (not pushState) so
+	   scrolling doesn't spam the back button with a stop per section. */
+	function updateHash(name) {
+		var target = name === 'about' ? window.location.pathname + window.location.search : '#' + name;
+		if (window.location.hash === '#' + name) return;
+		if (name === 'about' && !window.location.hash) return;
+		if (window.history && window.history.replaceState) {
+			window.history.replaceState(null, '', target);
+		}
+	}
+
+	/* Cross-page hrefs like "../index.html#work" need a real navigation;
+	   only a bare "#id" can be scrolled to in place. */
+	function isSamePageHash(href) {
+		return !!href && href.charAt(0) === '#';
+	}
+
+	/* Smooth-scrolls to a same-page section instead of letting the browser's
+	   default anchor-click jump the URL there instantly — that jump used to
+	   race ahead of the scroll-spy observer, so the address bar would say
+	   "#work" while the indicator was still sitting on "About" until the
+	   scroll caught up. Scrolling this way means the observer is the only
+	   thing that ever moves the indicator or the URL, so they can't drift
+	   apart. Returns false (and does nothing) if there's no such section,
+	   so the caller can fall back to a normal navigation. */
+	function goToSection(href) {
+		var target = document.getElementById(href.slice(1));
+		if (!target) return false;
+		target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		return true;
+	}
+
 	function setupScrollSpy(tabs) {
 		var ids = ['about', 'work', 'writing', 'contact'];
 		var sections = ids
@@ -50,6 +123,7 @@
 			entries.forEach(function (entry) {
 				if (entry.isIntersecting) {
 					setActiveTab(tabs, entry.target.id);
+					updateHash(entry.target.id);
 				}
 			});
 		}, { rootMargin: '-10% 0px -50% 0px', threshold: 0 });
@@ -62,6 +136,8 @@
 		var menu = document.getElementById('menu');
 		if (!menu) return;
 
+		setupBackButton(menu);
+
 		var ul = menu.querySelector('ul');
 		var indicator = menu.querySelector('.menu-indicator');
 		if (!ul || !indicator) return;
@@ -73,6 +149,15 @@
 
 		if (!setupScrollSpy(tabs)) {
 			setActiveByPath(tabs);
+		} else {
+			tabs.forEach(function (li) {
+				var a = li.querySelector('a');
+				var href = a && a.getAttribute('href');
+				if (!isSamePageHash(href)) return;
+				a.addEventListener('click', function (e) {
+					if (goToSection(href)) e.preventDefault();
+				});
+			});
 		}
 
 		var dragging = false;
@@ -130,7 +215,10 @@
 			indicator.style.transform = '';
 			if (moved && lastIndex > -1) {
 				var link = tabs[lastIndex].querySelector('a');
-				if (link) window.location.href = link.getAttribute('href');
+				var href = link && link.getAttribute('href');
+				if (href && (!isSamePageHash(href) || !goToSection(href))) {
+					window.location.href = href;
+				}
 			}
 			moved = false;
 		});

@@ -7,8 +7,6 @@
 	<title>Abstract Global Navigation &middot; Work &middot; Jordan Staniscia &middot; Designer</title>
 	<meta name="description" content="The process of redesigning the Abstract global navigation in 2020.">
 
-	<!--  <base href="http://jor.dance/">-->
-
 	<link rel="icon" type="image/png" href="../images/favicon-16.png" sizes="16x16">
 	<link rel="icon" type="image/png" href="../images/favicon-32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="../images/favicon-64.png" sizes="64x64">
@@ -22,11 +20,9 @@
 
 	<link rel="stylesheet" type="text/css" media="all" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" media="all" href="../css/style.css">
-	<link rel="stylesheet" type="text/css" media="all" href="../css/animate.css">
 
-	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="../js/menu.js"></script>
 	<script type="text/javascript" src="../js/menu-tabbar.js"></script>
+
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -40,66 +36,107 @@
 </head>
 <body>
 
-	<div id="" class="content-container container spacer animated fadeIn">
-		<div class="section">
-			<section class="marginBottom24">
-				<a class="breadcrumb" href="../work.html">
+	<div id="menu">
+	  <ul>
+	    <li>
+	      <a href="../index.html#about">
+	        <svg xmlns="http://www.w3.org/2000/svg" data-name="circle" viewBox="0 0 24 24"><title>circle</title><g data-name="Icon/Circle"><circle class="circle" cx="12" cy="12" r="11"/></g></svg>
+	        <span class="menu-label">About</span>
+	      </a>
+	    </li>
+	    <li>
+	      <a href="../index.html#work">
+	        <svg xmlns="http://www.w3.org/2000/svg" data-name="square" viewBox="0 0 24 24"><title>square</title><g data-name="Icon/Square"><path class="square" d="M2 4C2 2.89543 2.89543 2 4 2H20C21.1046 2 22 2.89543 22 4V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V4Z"></g></svg>
+	        <span class="menu-label">Work</span>
+	      </a>
+	    </li>
+	    <li>
+	      <a href="../index.html#writing">
+	        <svg xmlns="http://www.w3.org/2000/svg" data-name="triangle" viewBox="0 0 24 24"></defs><title>triangle</title><g data-name="Icon/Triangle"><path class="triangle" fill-rule="evenodd" clip-rule="evenodd" d="M10.2995 3.74701C11.0814 2.48396 12.9187 2.48396 13.7006 3.74701L23.1103 18.9473C23.9351 20.2797 22.9767 22 21.4097 22H2.59033C1.02331 22 0.0649925 20.2797 0.8898 18.9473L10.2995 3.74701Z"></g></svg>
+	        <span class="menu-label">Writing</span>
+	      </a>
+	    </li>
+	    <li>
+	      <a href="../index.html#contact">
+	        <svg xmlns="http://www.w3.org/2000/svg" data-name="half-circle" viewBox="0 0 24 24"></defs><title>half circle</title><g data-name="Icon/halfcircle"><path class="half-circle" d="M20.144 1.31703C24.4366 6.81523 24.8949 14.6616 19.8891 19.6673C14.8834 24.6731 7.03706 24.2148 1.53885 19.9222C0.668207 19.2424 0.674428 17.9646 1.45548 17.1835L17.4053 1.23365C18.1864 0.452604 19.4642 0.446381 20.144 1.31703Z"></g></svg>
+	        <span class="menu-label">Contact</span>
+	      </a>
+	    </li>
+	    <li class="menu-indicator" aria-hidden="true"></li>
+	  </ul>
+	</div>
+
+	<div id="container" class="container">
+
+		<div class="contentBox case-study">
+			<div class="case-study-intro">
+				<a class="back-link" href="../index.html#work">
 					<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M2.61697 10.1824C1.39232 9.39508 1.39232 7.60491 2.61697 6.81764L10.9185 1.48097C12.2495 0.625314 14 1.581 14 3.16333V13.8367C14 15.419 12.2495 16.3747 10.9185 15.519L2.61697 10.1824Z"/>
 					</svg>
 					All work
 				</a>
+
+				<div class="metadata colorSecondary marginBottom8">Abstract &middot; Product &middot; 2020</div>
 				<h1 class="h1 colorDefault marginBottom8">Abstract Global Navigation</h1>
-	      <h2 class="h2 colorSecondary marginBottom24 weightRegular">Bringing ergonomics to the app</h2>
+				<h2 class="h2 colorSecondary weightRegular">Bringing ergonomics to the app</h2>
+			</div>
 
-				<img class="full-width" src="../images/work/abstract-navigation-banner.png" alt="Abstract navigation banner image"/>
+			<img class="case-study-hero" src="../images/work/abstract-navigation-banner.png" alt="Abstract navigation banner image">
 
-				<p>Through countless research efforts, we’d seen usage of Abstract begin to look different than when it had first launched. Customers were swapping constantly between projects (repos) and branches, to get their work done in a given day. The current navigation couldn’t hold up to the needs of the customers, allowing only one project to be available at any given time. Being a daily work app, little bits of friction like this meant massive frustration because of constant repetition. We needed something more ergonomic to the needs of our users.</p>
+			<section>
+				<p>Through countless research efforts, we&rsquo;d seen usage of Abstract begin to look different than when it had first launched. Customers were swapping constantly between projects (repos) and branches, to get their work done in a given day. The current navigation couldn&rsquo;t hold up to the needs of the customers, allowing only one project to be available at any given time. Being a daily work app, little bits of friction like this meant massive frustration because of constant repetition. We needed something more ergonomic to the needs of our users.</p>
 			</section>
 
-			<section class="marginBottom24">
-				<h2 class="h2 colorDefault marginBottom8">The old experience</h2>
+			<section>
+				<h2 class="case-study-subhead marginBottom8">The old experience</h2>
 
 				<p>Before, the global navigation would physically change as the user moved up and down the hierarchy of the app. This meant a severe reorientation each time. That became an issue especially paired with how often this occurs. We were seeing users move between projects over time going up and up and up as Abstract grew within an organization.</p>
 
-				<img class="" src="../images/work/abstract-navigation-old.png" alt="original abstract navigation"/>
+				<img src="../images/work/abstract-navigation-old.png" alt="original abstract navigation">
 
 				<p>Other aspects that took up the majority of the space were also not often needed or used. We saw real opportunity focusing far more on how people realistically used our navigation.</p>
 
-				<img class="" src="../images/work/abstract-navigation-old-2.jpeg" alt="original abstract navigation"/>
-
+				<img src="../images/work/abstract-navigation-old-2.jpeg" alt="original abstract navigation">
 			</section>
-			<section class="marginBottom24">
 
-				<h2 class="h2 colorDefault marginBottom8">The new experience</h2>
+			<section>
+				<h2 class="case-study-subhead marginBottom8">The new experience</h2>
 
 				<p>Global navigation should be just that: global. The first thing to do was combine all of our navigation together. This meant some aspects would need to have more prominence and others would need to be minimized.</p>
 
-				<img class="full-width" src="../images/work/abstract-navigation-final.png" alt="Shot of the new navigation"/>
+				<img src="../images/work/abstract-navigation-final.png" alt="Shot of the new navigation">
 
-				<p>In order to make sure the application could support our new experience, we also had to consider what we were going to affect when it came to <strong>performance</strong>. Before, all the branches in a single project were visible. But now, an unlimited number of projects could be seen at once, meaning every project’s branches would need to be loaded too. Based on how this had previously been architected, we needed to find compromises to make sure we didn’t ruin the snappy performance our current UI maintained. We opted to limit branches, showing 6 to start and letting users expand for more. Since we always showed the most recently updated 6, we didn’t impact users very much but it was something we monitored after launch to make sure of.</p>
+				<p>In order to make sure the application could support our new experience, we also had to consider what we were going to affect when it came to <strong>performance</strong>. Before, all the branches in a single project were visible. But now, an unlimited number of projects could be seen at once, meaning every project&rsquo;s branches would need to be loaded too. Based on how this had previously been architected, we needed to find compromises to make sure we didn&rsquo;t ruin the snappy performance our current UI maintained. We opted to limit branches, showing 6 to start and letting users expand for more. Since we always showed the most recently updated 6, we didn&rsquo;t impact users very much but it was something we monitored after launch to make sure of.</p>
 
-				<img class="full-width" src="../images/work/abstract-navigation-branches.png" alt="Show branch expansion"/>
+				<img src="../images/work/abstract-navigation-branches.png" alt="Show branch expansion">
 
 				<p>We were even able to add information users had been requesting: showing a small icon to represent which stage in the design process the given branch was at. A more condensed design made way for this improvement.</p>
 
-				<img class="full-width" src="../images/work/abstract-navigation-status.png" alt="All the branch statuses we display in the navigation"/>
+				<img src="../images/work/abstract-navigation-status.png" alt="All the branch statuses we display in the navigation">
 
 				<p>The new experience was launched on July 1, 2020.</p>
 
-				<img class="full-width" src="../images/work/abstract-navigation-animated.gif" alt="Animated promo for the new navigation"/>
-
+				<img src="../images/work/abstract-navigation-animated.gif" alt="Animated promo for the new navigation">
 			</section>
+		</div>
 
-			<section class="marginBottom24 credits">
-				<h3 class="weightBold colorSecondary marginBottom8">Credits and Special Thanks to</h3>
-				<p>Anthony Castro, Tom Moor, Tim Van Damme, Brandon Green, Payam Rajabi, Sarah McIlwain, and Josh Brewer.</p>
-			</section>
+		<div class="contentBox case-study-credits credits">
+			<h3 class="weightBold colorDefaultDark marginBottom8">Credits and Special Thanks to</h3>
+			<p class="colorSecondaryDark">Anthony Castro, Tom Moor, Tim Van Damme, Brandon Green, Payam Rajabi, Sarah McIlwain, and Josh Brewer.</p>
+		</div>
 
-			<div><a href="../work.html" class="big-link">Back to all work</a></div>
+		<div id="footer" class="contentBox gray case-study-footer">
+		    <div class="metadata colorSecondary marginBottom8">
+				<span class="footerLine">Copyright &copy; 2026 Jordan Staniscia</span>
+			</div>
+			<div class="metadata colorSecondary">
+			    <span class="footerLine marginBottom0">Feeling nostalgic for a time before AI?</span>
+				<span class="footerLine"><a href="../chat.html" class="colorSecondary">Chat with non-AI Jordan.</a></span>
+			</div>
+		</div>
 
 	</div>
-
 
 </body>
 </html>
