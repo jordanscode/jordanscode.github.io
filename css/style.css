@@ -632,7 +632,10 @@ a:active {
     display: block;
 }
 
-/* Optional: scale to fill height and letterbox left/right instead of cropping */
+/* Scale to fill height and letterbox left/right instead of cropping — the
+   box itself stays the full card size (from the base rule above, at every
+   breakpoint), so the inline background-color set per-image shows through
+   evenly in the letterboxed gaps and object-position keeps it centered. */
 .portfolio-item img.contain {
     object-fit: contain;
     object-position: center;
@@ -759,7 +762,15 @@ a:active {
 }
 
 /* Case Study */
-.case-study a.back-link, .case-study a.back-link:visited {
+/* Sits in normal flow at the top of whichever .contentBox it's injected
+   into (see setupContentBackLink in menu-tabbar.js) — not fixed, so it
+   scrolls away with the rest of the content column. No glass blur, and it
+   keeps its "Back" label since there's no tab bar here to lean on.
+   Background matches the resting look of an active item elsewhere in the
+   nav (the sliding indicator, the mobile tab bar's highlight), rather
+   than its own one-off gray. Not scoped to .case-study — any page's
+   .contentBox can use it. */
+.back-link, .back-link:visited {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -769,34 +780,36 @@ a:active {
     font-size: 15px;
     font-weight: 600;
     color: #353A44;
-    background-color: #FAFAFB;
-    transition: background-color 0.2s, color 0.2s;
+    background-color: rgba(0, 0, 0, 0.06);
+    transition: background-color 0.2s, color 0.2s, transform 0.2s ease;
     margin-bottom: 24px;
 }
 
-.case-study a.back-link:hover {
-    background-color: #F2F2F2;
+/* .case-study a (below) underlines and colors prose links, and — being
+   two classes — beats the plain .back-link rule above on specificity even
+   though this is a widget, not prose. Re-assert over it here. */
+.case-study a.back-link, .case-study a.back-link:visited {
+    color: #353A44;
+    text-decoration: none;
 }
 
-.case-study a.back-link:active {
-    background-color: #E5E5E5;
-    transform: matrix(0.96, 0, 0, 0.96, 0, 0);
+.back-link:hover {
+    background-color: rgba(0, 0, 0, 0.10);
+    transform: translateX(-4px);
+}
+
+.back-link:active {
+    background-color: rgba(0, 0, 0, 0.12);
+    /* Desktop-only element (hidden on mobile), so :active always co-occurs
+       with :hover here — combine both instead of letting :active's own
+       transform silently replace the hover shift underneath the cursor. */
+    transform: translateX(-4px) scale(0.96);
 }
 
 .back-link svg {
     width: 14px;
     height: 14px;
     fill: currentColor;
-}
-
-.case-study a.back-link:hover svg {
-    animation: backLinkNudge 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes backLinkNudge {
-    0%   { transform: translateX(0); }
-    40%  { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
 }
 
 .case-study,
@@ -833,6 +846,14 @@ a:active {
     margin-bottom: 48px;
 }
 
+/* A video embed doesn't carry its own aspect ratio the way an <img> does
+   — without this it'd stay stuck at its HTML height attribute (315px)
+   while width stretched to fill the column, badly distorting it. */
+iframe.case-study-hero {
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
 .case-study section {
     margin-bottom: 56px;
 }
@@ -853,7 +874,8 @@ a:active {
 }
 
 .case-study p,
-.case-study ul {
+.case-study ul,
+.case-study h3 {
     max-width: 680px;
     margin-left: auto;
     margin-right: auto;
@@ -976,7 +998,7 @@ a:active {
     }
 
     /* The floating round back button in the tab bar does this job now. */
-    .case-study a.back-link {
+    .back-link {
         display: none;
     }
 
@@ -1037,19 +1059,19 @@ a:active {
 		top: auto;
 		left: 16px;
 		right: 16px;
-		bottom: calc(16px + env(safe-area-inset-bottom));
+		bottom: calc(8px + env(safe-area-inset-bottom));
 		margin: 0 auto;
 		border-radius: 34px;
 		background-color: rgba(255, 255, 255, 0.72);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		border: 1px solid rgba(255, 255, 255, 0.5);
-		box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16), inset 0 1px 0 0 rgba(255,255,255,0.6);
-		/* The pill sits a constant 16px above the safe area (both terms
+		box-shadow: 0 8px 12px 0 rgba(0,0,0,0.14), inset 0 1px 0 0 rgba(255,255,255,0.6);
+		/* The pill sits a constant 8px above the safe area (both terms
 		   below include env(safe-area-inset-bottom), which cancels out),
 		   so clip the shadow's downward bleed there — Safari otherwise
 		   chops it off mid-fade wherever the home indicator happens to sit. */
-		clip-path: inset(-60px -60px -16px -60px);
+		clip-path: inset(-60px -60px -8px -60px);
 	}
 
 	/* Subpages have nowhere to go but back, so the whole dock collapses
@@ -1087,9 +1109,14 @@ a:active {
 		text-decoration: none;
 	}
 
-	/* The triangle's own path sits slightly left of its viewBox center,
-	   so flexbox centering alone leaves it looking off — nudge it back. */
+	/* Sized here, not by the shared markup's own inline attributes (which
+	   are tuned for the smaller desktop .back-link icon) — this button is
+	   bigger, so its icon should be too. The triangle's own path also
+	   sits slightly left of its viewBox center, so flexbox centering
+	   alone leaves it looking off; nudge it back. */
 	#menu.is-subpage .menu-back svg {
+		width: 18px;
+		height: auto;
 		transform: translateX(-2px);
 	}
 

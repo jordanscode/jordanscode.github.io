@@ -36,10 +36,25 @@
 		return /\/(index\.html)?$/.test(window.location.pathname);
 	}
 
-	/* Case studies live one level down in /work/ and go back to the Work
-	   section; every other subpage just goes back to the top of the site. */
+	/* Always the top of the site — case studies live one level down in
+	   /work/, so they need the extra ../ to get there. */
 	function backHref() {
-		return /\/work\//.test(window.location.pathname) ? '../index.html#work' : 'index.html';
+		return /\/work\//.test(window.location.pathname) ? '../index.html' : 'index.html';
+	}
+
+	// The back-link SVG, shared by both flavors of the back button below.
+	var BACK_ARROW_SVG = '<svg width="16" height="17" viewBox="0 0 16 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.61697 10.1824C1.39232 9.39508 1.39232 7.60491 2.61697 6.81764L10.9185 1.48097C12.2495 0.625314 14 1.581 14 3.16333V13.8367C14 15.419 12.2495 16.3747 10.9185 15.519L2.61697 10.1824Z"/></svg>';
+
+	/* Prefers a real browser back-navigation (preserves scroll position on
+	   the page you came from) over always landing at the top of index.html
+	   — but only when that history actually leads back into this site. */
+	function goBack(e) {
+		var ref = document.referrer;
+		var cameFromSite = ref && ref.indexOf(window.location.origin) === 0;
+		if (cameFromSite && window.history.length > 1) {
+			e.preventDefault();
+			window.history.back();
+		}
 	}
 
 	/* On mobile, subpages don't need the full four-icon dock — there's
@@ -54,21 +69,30 @@
 		back.className = 'menu-back';
 		back.href = backHref();
 		back.setAttribute('aria-label', 'Back');
-		// Same triangle mark as the back-link at the top of a case study page.
-		// Width only, no height: lets the SVG derive it from the viewBox so
-		// the triangle keeps its native proportions instead of stretching.
-		back.innerHTML = '<svg width="18" viewBox="0 0 16 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.61697 10.1824C1.39232 9.39508 1.39232 7.60491 2.61697 6.81764L10.9185 1.48097C12.2495 0.625314 14 1.581 14 3.16333V13.8367C14 15.419 12.2495 16.3747 10.9185 15.519L2.61697 10.1824Z"/></svg>';
-
-		back.addEventListener('click', function (e) {
-			var ref = document.referrer;
-			var cameFromSite = ref && ref.indexOf(window.location.origin) === 0;
-			if (cameFromSite && window.history.length > 1) {
-				e.preventDefault();
-				window.history.back();
-			}
-		});
+		back.innerHTML = BACK_ARROW_SVG;
+		back.addEventListener('click', goBack);
 
 		menu.appendChild(back);
+	}
+
+	/* Desktop's in-content "Back" pill, dropped in as the first thing in
+	   the page's first .contentBox. Generated here — not hand-copied into
+	   each case study's markup — so any future subpage gets it for free
+	   just by loading this script and having a #container > .contentBox;
+	   nothing else to wire up. */
+	function setupContentBackLink() {
+		if (isIndexPage()) return;
+
+		var contentBox = document.querySelector('#container .contentBox');
+		if (!contentBox) return;
+
+		var back = document.createElement('a');
+		back.className = 'back-link';
+		back.href = backHref();
+		back.innerHTML = BACK_ARROW_SVG + 'Back';
+		back.addEventListener('click', goBack);
+
+		contentBox.insertBefore(back, contentBox.firstChild);
 	}
 
 	/* Keeps the URL in sync with whichever section is on screen, so a
@@ -137,6 +161,7 @@
 		if (!menu) return;
 
 		setupBackButton(menu);
+		setupContentBackLink();
 
 		var ul = menu.querySelector('ul');
 		var indicator = menu.querySelector('.menu-indicator');
