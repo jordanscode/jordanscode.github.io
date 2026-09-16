@@ -95,6 +95,33 @@
 		contentBox.insertBefore(back, contentBox.firstChild);
 	}
 
+	/* Blurs each element in as it scrolls into view and back out as it
+	   leaves, every time — not a one-shot reveal. Covers the credits block
+	   plus every image in the article, each triggering independently off
+	   its own scroll position. Works on any page shaped this way, present
+	   or future; a no-op wherever none of these exist. Skips entirely
+	   under reduced motion, and adds the class that enables the blurred
+	   starting state only once JS is actually running, so there's no
+	   permanently-hidden fallback. */
+	function setupScrollReveal() {
+		if (!('IntersectionObserver' in window)) return;
+		if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+		var targets = Array.prototype.slice.call(document.querySelectorAll('.case-study-credits, .case-study img'));
+		if (!targets.length) return;
+
+		var observer = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				entry.target.classList.toggle('in-view', entry.isIntersecting);
+			});
+		}, { threshold: 0.15 });
+
+		targets.forEach(function (target) {
+			target.classList.add('blur-reveal');
+			observer.observe(target);
+		});
+	}
+
 	/* Keeps the URL in sync with whichever section is on screen, so a
 	   refresh (or a shared link) lands back on the same section instead
 	   of always snapping to the top. replaceState (not pushState) so
@@ -162,6 +189,7 @@
 
 		setupBackButton(menu);
 		setupContentBackLink();
+		setupScrollReveal();
 
 		var ul = menu.querySelector('ul');
 		var indicator = menu.querySelector('.menu-indicator');
