@@ -197,6 +197,15 @@ a:active {
 	z-index: 2;
 }
 
+/* The floating mobile tab bar (#menu, ~72px tall) is fixed to the bottom
+   of the viewport and overlaps the hero's own bottom edge here — clear it,
+   plus its safe-area inset for the home indicator. */
+@media screen and (max-width: 960px) {
+	.bike-rider {
+		bottom: calc(96px + env(safe-area-inset-bottom));
+	}
+}
+
 @media screen and (min-width: 961px) {
 	.bike-rider {
 		font-size: 40px;
@@ -584,17 +593,20 @@ a:active {
 .articleCard {
     background: #FAFAFB;
     border-radius: 16px;
-    transition: transform 0.2s;
+    transition: transform 0.2s, outline-color 0.2s ease;
     cursor: pointer;
     padding: 48px;
     height: 368px;
     position: relative;
     text-decoration: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
 }
 
 .articleCard:hover {
     background-color: #F2F2F2;
     transform: translateY(-4px);
+    outline-color: #009DE6;
 }
 
 .articleCard:active {
